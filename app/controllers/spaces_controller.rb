@@ -14,6 +14,7 @@ before_action :set_space, only: [:show, :edit, :update, :destroy]
 
   def create
     @space = Space.new(space_params)
+    @space.user = current_user
     if @space.save
       redirect_to space_path(@space)
     else

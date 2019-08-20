@@ -58,16 +58,19 @@
 </div>
  <hr>
 
-<div class="flat-cards">
+
+<div class="flat-cards name-flat">
   <div class="card-trip">
-    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
-    <div class="card-trip-infos">
-      <div>
-        <h2>Grande maison à Fontainebleau</h2>
-        <p>Lorem ipsum dolor sit amet...</p>
+    <% @spaces.each do |space| %>
+      <%= cl_image_tag space.photo.url %>
+      <div class="card-trip-infos">
+        <div>
+          <h2><%= link_to space.name %></h2>
+          <p><%= space.description %></p>
+        </div>
+        <img src="https://kitt.lewagon.com/placeholder/users/alexandrechupin" class="card-trip-user avatar-bordered" />
       </div>
-      <img src="https://kitt.lewagon.com/placeholder/users/alexandrechupin" class="card-trip-user avatar-bordered" />
-    </div>
+    <% end %>
   </div>
 
   <div class="card-trip">

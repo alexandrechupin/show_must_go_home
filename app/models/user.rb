@@ -11,5 +11,4 @@ class User < ApplicationRecord
   validates :phone_number, presence: true
 
   mount_uploader :photo, PhotoUploader
-
 end

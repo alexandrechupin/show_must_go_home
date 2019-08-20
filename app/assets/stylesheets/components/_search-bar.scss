@@ -1,0 +1,18 @@
+.active-pink-2 input[type=text]:focus:not([readonly]) {
+  border-bottom: 1px solid #393D3F;
+  box-shadow: 0 1px 0 0 #393D3F;
+}
+
+.active-pink input[type=text] {
+  border-bottom: none;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  border-radius: 0px;
+  background-color: #F4F4F4;
+  box-shadow: 0 1px 0 0 #393D3F;
+}
+
+.active-pink .fa, .active-pink-2 .fa {
+  color: #393D3F;
+}

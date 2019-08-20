@@ -15,10 +15,21 @@
       <p> <%= @space.policy %></p>
 
     <div class="booking-form">
-      <%= simple_form_for [@space, @booking] do |f| %>
-        <%= f.input :date, as: :date %>
-        <%= f.input :duration %>
-        <%= f.submit "Je réserve cet espace", class: "btn btn-success" %>
+      <h3>Book your flat!</h3>
+      <% unless user_signed_in? %>
+      <p>You must be logged in to book this space!</p>
+      <%= link_to "Login", new_user_session_path, class: "btn btn-dark" %>
+
+      <% else %>
+        <%= simple_form_for [@space, @booking] do |f| %>
+          <%= f.input :event_type, label: "Type d'événement", collection: Space::EVENTTYPE %>
+          <%= f.input :date, as: :date, label: "Date" %>
+          <%= f.input :time, as: :time, label: "Heure" %>
+          <%= f.input :duration, label: "Durée en heures" %>
+          <%= f.input :description, label: "Description" %>
+          <%= f.input :number_of_guests, label: "Nombre d'invités" %>
+          <%= f.submit "Je réserve cet espace", class: "btn btn-success" %>
+        <% end %>
       <% end %>
     </div>
   </div>

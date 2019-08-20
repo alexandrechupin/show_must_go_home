@@ -1,20 +1,19 @@
 class SpacesController < ApplicationController
-  before_action :set_space, only: [:show]
+before_action :set_space, only: [:show, :edit, :update, :destroy]
 
   def index
     @spaces = Space.all
+  end 
+  
+  def show
   end
 
   def new
     @space = Space.new
   end
 
-  def show
-    @space = Space.find(params[:id])
-  end
-
   def create
-    @space = Space.new(space_params)
+    @space = Space.new(spaces_params)
     if @space.save
       redirect_to space_path(@space)
     else
@@ -23,7 +22,7 @@ class SpacesController < ApplicationController
   end
 
   private
-  # Use callbacks to share common setup or constraints between actions.
+  
   def set_space
     @space = Space.find(params[:id])
   end
@@ -32,4 +31,5 @@ class SpacesController < ApplicationController
   def space_params
     params.require(:space).permit(:name, :address, :city, :zipcode, :equipment, :event_type, :place_type, :capacity, :description, :photo)
   end
+
 end

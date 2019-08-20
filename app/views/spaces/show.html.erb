@@ -1,0 +1,26 @@
+<%= cl_image_tag @space.photo, height: 300, width: 400, crop: :fill %>
+
+
+<div class="container w-50">
+
+  <h3><%= @space.name  %></h3>
+    <div class="space-description">
+      <div class="space-details">
+        <h4> <%= @space.address  %></h4>
+        <h4> <%= @space.equipment  %></h4>
+        <hr>
+      </div>
+    </div>
+      <p> <%= @space.description %> </p>
+      <p> <%= @space.policy %></p>
+
+    <div class="booking-form">
+      <%= simple_form_for [@space, @booking] do |f| %>
+        <%= f.input :date, as: :date %>
+        <%= f.input :duration %>
+        <%= f.submit "Je réserve cet espace", class: "btn btn-success" %>
+      <% end %>
+    </div>
+  </div>
+
+<p> <%= link_to 'Back to list', spaces_path %> </p>

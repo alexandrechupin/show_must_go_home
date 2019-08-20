@@ -1,6 +1,6 @@
 <div class="container mt-4">
 
-  <h1> Proposez votre lieu ici </h1>
+  <h2> Proposez votre lieu ici </h2>
 
   <%= simple_form_for(@space) do |f| %>
     <%= f.input :name %>
@@ -12,7 +12,6 @@
     <%= f.input :event_type, collection: Space::EVENTTYPE %>
     <%= f.input :place_type, collection: Space::SPACETYPE %>
     <%= f.input :capacity %>
-    <%= f.input :description %>
     <%= f.input :photo %>
     <%= f.input :photo_cache, as: :hidden %>
     <%= f.submit "J'enregistre mon lieu", class: "btn btn-success" %>

@@ -1,0 +1,112 @@
+<div class="container mt-5">
+  <!-- Search form -->
+  <%= render 'search-bar' %>
+  <hr>
+  <div class="form-inline">
+    <input class="form-control mr-sm-2 datepicker" name="query" type="search" placeholder="Date" aria-label="Search" value="<%= params[:query] %>">
+    <div class="dropdown">
+      <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Capacité
+      </a>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+        <a class="dropdown-item" href="#">0-15 personnes</a>
+        <a class="dropdown-item" href="#">15-30 personnes</a>
+        <a class="dropdown-item" href="#">30+</a>
+      </div><br>
+    </div>
+    <div class="dropdown">
+      <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Equipements
+      </a>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+        <a class="dropdown-item" href="#">Piano</a>
+        <a class="dropdown-item" href="#">Micros</a>
+        <a class="dropdown-item" href="#">Autre</a>
+      </div><br>
+    </div>
+    <div class="dropdown">
+      <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Type d'évènement
+      </a>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+        <a class="dropdown-item" href="#">Concert</a>
+        <a class="dropdown-item" href="#">Chorale</a>
+        <a class="dropdown-item" href="#">Autre</a>
+      </div>
+    </div>
+</div>
+ <hr>
+
+<div class="flat-cards">
+  <div class="card-trip">
+    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+    <div class="card-trip-infos">
+      <div>
+        <h2>Grande maison à Fontainebleau</h2>
+        <p>Lorem ipsum dolor sit amet...</p>
+      </div>
+      <h2 class="card-trip-pricing">£99.99</h2>
+      <img src="https://kitt.lewagon.com/placeholder/users/alexandrechupin" class="card-trip-user avatar-bordered" />
+    </div>
+  </div>
+
+  <div class="card-trip">
+    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+    <div class="card-trip-infos">
+      <div>
+        <h2>Appartement dans le 8ème</h2>
+        <p>Lorem ipsum dolor sit amet...</p>
+      </div>
+      <h2 class="card-trip-pricing">£99.99</h2>
+      <img src="https://kitt.lewagon.com/placeholder/users/sarahgcd" class="card-trip-user avatar-bordered" />
+    </div>
+  </div>
+
+  <div class="card-trip">
+    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+    <div class="card-trip-infos">
+      <div>
+        <h2>Grand appartement dans le marais</h2>
+        <p>Lorem ipsum dolor sit amet...</p>
+      </div>
+      <h2 class="card-trip-pricing">£99.99</h2>
+      <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+    </div>
+  </div>
+
+  <div class="card-trip">
+    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+    <div class="card-trip-infos">
+      <div>
+        <h2>Grand loft dans le 2ème</h2>
+        <p>Lorem ipsum dolor sit amet...</p>
+      </div>
+      <h2 class="card-trip-pricing">£99.99</h2>
+      <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+    </div>
+  </div>
+
+  <div class="card-trip">
+    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+    <div class="card-trip-infos">
+      <div>
+        <h2>Loft dans le 17ème</h2>
+        <p>Lorem ipsum dolor sit amet...</p>
+      </div>
+      <h2 class="card-trip-pricing">£99.99</h2>
+      <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+    </div>
+  </div>
+
+  <div class="card-trip">
+    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+    <div class="card-trip-infos">
+      <div>
+        <h2>Appartement dans le 1er</h2>
+        <p>Lorem ipsum dolor sit amet...</p>
+      </div>
+      <h2 class="card-trip-pricing">£99.99</h2>
+      <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+    </div>
+  </div>
+</div>

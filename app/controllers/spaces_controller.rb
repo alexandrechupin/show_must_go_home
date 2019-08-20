@@ -6,6 +6,8 @@ before_action :set_space, only: [:show, :edit, :update, :destroy]
   end
 
   def show
+    @space = Space.find(params[:id])
+    @booking = Booking.new
   end
 
   def new

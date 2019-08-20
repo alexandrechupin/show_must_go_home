@@ -8,7 +8,7 @@ class Space < ApplicationRecord
   validates :address, presence: true
   validates :city, presence: true
   validates :zipcode, presence: true
-  validates :equipment, presence: true, inclusion: { in: EQUIPMENTTYPE}
+  validates :equipment, presence: true
   validates :event_type, presence: true, inclusion: { in: EVENTTYPE}
   validates :place_type, presence: true, inclusion: { in: SPACETYPE}
   validates :capacity, presence: true

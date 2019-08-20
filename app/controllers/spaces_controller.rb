@@ -1,5 +1,5 @@
 class SpacesController < ApplicationController
-  before_action :set_place, only: [:show, :edit, :update, :destroy]
+  before_action :set_space, only: [:show, :edit, :update, :destroy]
 
   def show
   end

@@ -8,8 +8,8 @@ class Space < ApplicationRecord
   validates :city, presence: true
   validates :zipcode, presence: true
   validates :equipment, presence: true
-  validates :event_type, presence: true, inclusion: { in: ["tous concerts", "événements classique", "événements folk", "événements jazz", "événements pop/rock", "lectures", "événements assis", "événements festifs"] }
-  validates :place_type, presence: true, inclusion: { in: ["salon", "loft", "jardin", "terrasse", "grange", "bureau"]}
+  validates :event_type, presence: true, inclusion: { in: EVENTTYPE}
+  validates :place_type, presence: true, inclusion: { in: SPACETYPE}
   validates :capacity, presence: true
   validates :description, presence: true
   validates :photo, presence: true

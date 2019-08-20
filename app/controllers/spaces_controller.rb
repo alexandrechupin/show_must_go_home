@@ -32,5 +32,4 @@ before_action :set_space, only: [:show, :edit, :update, :destroy]
   def space_params
     params.require(:space).permit(:name, :address, :city, :zipcode, :equipment, :event_type, :place_type, :capacity, :description, :photo)
   end
-
 end

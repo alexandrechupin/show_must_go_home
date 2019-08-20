@@ -1,0 +1,12 @@
+<div class="container w-75">
+ <ul>
+   <% if @user.host == true %>
+     <% @bookings.each do |booking| %>
+      <li> <%= booking.description %></li>
+      <li> <%= booking.user_id %> </li>
+      <% end  %>
+    <% else %>
+       <h2> <%= "You do not have any bookings" %> </h2>
+    <% end  %>
+ </ul>
+</div>

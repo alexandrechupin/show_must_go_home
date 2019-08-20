@@ -16,6 +16,11 @@ class BookingsController < ApplicationController
     end
   end
 
+  def index
+    @user = User.find(params[:user_id])
+    @bookings = Booking.where(id: @user.id)
+  end
+
   private
 
   def booking_params

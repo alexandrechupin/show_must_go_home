@@ -18,7 +18,7 @@ before_action :set_space, only: [:show, :edit, :update, :destroy]
     @space = Space.new(space_params)
     @space.user = current_user
     if @space.save
-      redirect_to space_path(@space)
+      redirect_to spaces_path
     else
       render :new
     end

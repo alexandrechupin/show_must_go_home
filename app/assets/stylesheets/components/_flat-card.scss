@@ -4,6 +4,10 @@
   grid-gap: 16px;
 }
 
+.name-flat a {
+  color: black;
+}
+
 .card-trip {
   overflow: hidden;
   background: white;
@@ -42,4 +46,5 @@
   right: 16px;
   top: -20px;
   width: 40px;
+  height: 40px;
 }

@@ -18,8 +18,9 @@ before_action :set_space, only: [:show, :edit, :update, :destroy]
     raise
     @space = Space.new(space_params)
     @space.user = current_user
+
     if @space.save
-      redirect_to space_path(@space)
+      redirect_to spaces_path
     else
       render :new
     end
@@ -33,6 +34,6 @@ before_action :set_space, only: [:show, :edit, :update, :destroy]
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def space_params
-    params.require(:space).permit(:name, :address, :city, :zipcode, :equipment, :event_type, :place_type, :capacity, :description, :photo)
+    params.require(:space).permit(:name, :address, :city, :zipcode, :event_type, :place_type, :capacity, :description, :photo, equipment: [])
   end
 end

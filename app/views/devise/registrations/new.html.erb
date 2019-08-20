@@ -34,6 +34,11 @@
                   required: true,
                   label: "Confirmation du mot de passe",
                   input_html: { autocomplete: "new-password" } %>
+      <%= f.input :photo,
+                  required: true,
+                  label: "Uploadez ici votre photo d'avatar",
+                  input_html: { autocomplete: "fichier format .jpeg ou .png" } %>
+      <%= f.input :photo_cache, as: :hidden %>
     </div>
 
     <div class="row">

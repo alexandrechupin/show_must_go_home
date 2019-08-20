@@ -18,7 +18,7 @@ before_action :set_space, only: [:show, :edit, :update, :destroy]
     if @space.save
       redirect_to space_path(@space)
     else
-      return "ERROR"
+      render :new
     end
   end
 

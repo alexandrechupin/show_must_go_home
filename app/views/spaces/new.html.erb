@@ -1,19 +1,27 @@
 <div class="container mt-3 col-6">
+  <%if user_signed_in? %>
+    <h2> Proposez votre lieu ici </h2>
 
-  <h2> Proposez votre lieu ici </h2>
-
-  <%= simple_form_for(@space) do |f| %>
-    <%= f.input :name %>
-    <%= f.input :description %>
-    <%= f.input :address %>
-    <%= f.input :city %>
-    <%= f.input :zipcode %>
-    <%= f.input :equipment %>
-    <%= f.input :event_type, collection: Space::EVENTTYPE %>
-    <%= f.input :place_type, collection: Space::SPACETYPE %>
-    <%= f.input :capacity %>
-    <%= f.input :photo %>
-    <%= f.input :photo_cache, as: :hidden %>
-    <%= f.submit "J'enregistre mon lieu", class: "btn btn-success" %>
+    <%= simple_form_for(@space) do |f| %>
+      <%= f.input :name, :label => "Nommez votre lieu" %>
+      <%= f.input :place_type, :label => "Sélectionnez le type de lieu que vous souhaitez partager",collection: Space::SPACETYPE %>
+      <%= f.input :description, :label => "Décrivez brièvement votre lieu"%>
+      <%= f.input :address, :label => "Précisez votre addresse : elle ne sera pas rendue publique" %>
+      <%= f.input :city, :label => "Ville" %>
+      <%= f.input :zipcode, :label => "Code Postal" %>
+      <%= f.input :equipment,:label => "Quels sont les équipements que vous souhaitez mettre à disposition ?", collection: Space::EQUIPMENTTYPE, input_html: { class: 'multiselectuser', multiple: true} %>
+      <%= f.input :event_type, :label => "Quels types d'événements souhaitez vous accueillir ?", collection: Space::EVENTTYPE %>
+      <%= f.input :capacity, :label => "Quelle est la capacité d'accueil de votre lieu ?" %>
+      <%= f.input :photo, :label => "Partagez une photo de votre lieu" %>
+      <%= f.input :photo_cache, as: :hidden %>
+      <%= f.submit "J'enregistre mon lieu", class: "btn btn-success" %>
+    <% end %>
+  <% else %>
+    <div class="alert alert-warning position-static mt-5" role="alert">
+       <h4 class="alert-heading">Un compte utilisateur est nécessaire pour poursuivre. </h4>
+        <p>Merci de votre intérêt pour Show Must Go Home.</p>
+        <hr>
+        <p class="mb-0">Créez un compte pour proposer votre salon. A tout de suite pour continuer.</p>
+    </div>
   <% end %>
 </div>

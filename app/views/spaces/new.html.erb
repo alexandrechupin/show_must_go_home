@@ -11,7 +11,6 @@
       <%= f.input :zipcode, label: "Code Postal" %>
       <%= f.input :equipment, label: "Quels sont les équipements que vous souhaitez mettre à disposition ?", collection: Space::EQUIPMENTTYPE, as: :check_boxes, include_hidden: false%>
       <%= f.input :event_type, label: "Quels types d'événements souhaitez vous accueillir ?", collection: Space::EVENTTYPE %>
-      <%= f.input :event_type,  collection: Space::EVENTTYPE %>
       <%= f.input :capacity, label: "Quelle est la capacité d'accueil de votre lieu ?" %>
       <%= f.input :policy, label: "Quelles sont vos règles d'annulation ?" %>
       <%= f.input :photo, label: "Partagez une photo de votre lieu" %>

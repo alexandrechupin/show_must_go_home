@@ -3,8 +3,8 @@ before_action :set_space, only: [:show, :edit, :update, :destroy]
 
   def index
     @spaces = Space.all
-  end 
-  
+  end
+
   def show
   end
 
@@ -13,7 +13,7 @@ before_action :set_space, only: [:show, :edit, :update, :destroy]
   end
 
   def create
-    @space = Space.new(spaces_params)
+    @space = Space.new(space_params)
     if @space.save
       redirect_to space_path(@space)
     else
@@ -22,7 +22,7 @@ before_action :set_space, only: [:show, :edit, :update, :destroy]
   end
 
   private
-  
+
   def set_space
     @space = Space.find(params[:id])
   end

@@ -4,35 +4,56 @@
   <hr>
   <div class="form-inline">
     <input class="form-control mr-sm-2 datepicker" name="query" type="search" placeholder="Date" aria-label="Search" value="<%= params[:query] %>">
-    <div class="dropdown">
-      <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Capacité
-      </a>
-      <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-        <a class="dropdown-item" href="#">0-15 personnes</a>
-        <a class="dropdown-item" href="#">15-30 personnes</a>
-        <a class="dropdown-item" href="#">30+</a>
-      </div><br>
+    <div class="form-group">
+      <select class="form-control" id="exampleFormControlSelect1">
+        <option>Type de lieu</option>
+        <option>salon</option>
+        <option>loft</option>
+        <option>jardin</option>
+        <option>terrasse</option>
+        <option>grange</option>
+        <option>bureau</option>
+      </select>
+    </div><br>
+
+    <div class="form-group pl-2">
+      <select class="form-control" id="exampleFormControlSelect1">
+        <option>Nombre de personnes</option>
+        <option>0-15 personnes</option>
+        <option>15-30 personnes</option>
+        <option>30+</option>
+      </select>
     </div>
-    <div class="dropdown">
-      <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Equipements
-      </a>
-      <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-        <a class="dropdown-item" href="#">Piano</a>
-        <a class="dropdown-item" href="#">Micros</a>
-        <a class="dropdown-item" href="#">Autre</a>
-      </div><br>
+
+    <div class="form-group pl-2">
+      <select class="form-control" id="exampleFormControlSelect1">
+        <option>Equipements</option>
+        <option>piano droit</option>
+        <option>piano à queue</option>
+        <option>ascenseur</option>
+        <option>arrivée électrique</option>
+        <option>chaises pliantes</option>
+        <option>chaises fixes</option>
+        <option>coussins</option>
+        <option>table</option>
+        <option>verres</option>
+        <option>cafetière</option>
+        <option>bouilloiree</option>
+        <option>réfrigérateure</option>
+      </select>
     </div>
-    <div class="dropdown">
-      <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Type d'évènement
-      </a>
-      <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-        <a class="dropdown-item" href="#">Concert</a>
-        <a class="dropdown-item" href="#">Chorale</a>
-        <a class="dropdown-item" href="#">Autre</a>
-      </div>
+
+    <div class="form-group pl-2">
+      <select class="form-control" id="exampleFormControlSelect1">
+        <option>Type d'évènement</option>
+        <option>tous concerts</option>
+        <option>événements classique</option>
+        <option>événements folk</option>
+        <option>événements jazz</option>
+        <option>événements pop/rock</option>
+        <option>lectures</option>
+        <option>événements festifs</option>
+      </select>
     </div>
 </div>
  <hr>
@@ -45,7 +66,6 @@
         <h2>Grande maison à Fontainebleau</h2>
         <p>Lorem ipsum dolor sit amet...</p>
       </div>
-      <h2 class="card-trip-pricing">£99.99</h2>
       <img src="https://kitt.lewagon.com/placeholder/users/alexandrechupin" class="card-trip-user avatar-bordered" />
     </div>
   </div>
@@ -57,7 +77,6 @@
         <h2>Appartement dans le 8ème</h2>
         <p>Lorem ipsum dolor sit amet...</p>
       </div>
-      <h2 class="card-trip-pricing">£99.99</h2>
       <img src="https://kitt.lewagon.com/placeholder/users/sarahgcd" class="card-trip-user avatar-bordered" />
     </div>
   </div>
@@ -69,7 +88,6 @@
         <h2>Grand appartement dans le marais</h2>
         <p>Lorem ipsum dolor sit amet...</p>
       </div>
-      <h2 class="card-trip-pricing">£99.99</h2>
       <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
     </div>
   </div>
@@ -81,7 +99,6 @@
         <h2>Grand loft dans le 2ème</h2>
         <p>Lorem ipsum dolor sit amet...</p>
       </div>
-      <h2 class="card-trip-pricing">£99.99</h2>
       <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
     </div>
   </div>
@@ -93,7 +110,6 @@
         <h2>Loft dans le 17ème</h2>
         <p>Lorem ipsum dolor sit amet...</p>
       </div>
-      <h2 class="card-trip-pricing">£99.99</h2>
       <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
     </div>
   </div>
@@ -105,8 +121,10 @@
         <h2>Appartement dans le 1er</h2>
         <p>Lorem ipsum dolor sit amet...</p>
       </div>
-      <h2 class="card-trip-pricing">£99.99</h2>
       <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
     </div>
   </div>
 </div>
+
+
+

@@ -3,17 +3,17 @@
     <h2> Proposez votre lieu ici </h2>
 
     <%= simple_form_for(@space) do |f| %>
-      <%= f.input :name, :label => "Nommez votre lieu" %>
-      <%= f.input :place_type, :label => "Sélectionnez le type de lieu que vous souhaitez partager",collection: Space::SPACETYPE %>
-      <%= f.input :description, :label => "Décrivez brièvement votre lieu"%>
-      <%= f.input :address, :label => "Précisez votre addresse : elle ne sera pas rendue publique" %>
-      <%= f.input :city, :label => "Ville" %>
-      <%= f.input :zipcode, :label => "Code Postal" %>
-      <%= f.input :equipment,:label => "Quels sont les équipements que vous souhaitez mettre à disposition ?", collection: Space::EQUIPMENTTYPE, input_html: { class: 'multiselectuser', multiple: true} %>
-      <%= f.input :event_type, :label => "Quels types d'événements souhaitez vous accueillir ?", collection: Space::EVENTTYPE %>
-      <%= f.input :capacity, :label => "Quelle est la capacité d'accueil de votre lieu ?" %>
-      <%= f.input :policy, :label => "Quelles sont vos règles d'annulation ?" %>
-      <%= f.input :photo, :label => "Partagez une photo de votre lieu" %>
+      <%= f.input :name, label: "Nommez votre lieu" %>
+      <%= f.input :place_type, label: "Sélectionnez le type de lieu que vous souhaitez partager",collection: Space::SPACETYPE %>
+      <%= f.input :description, label: "Décrivez brièvement votre lieu"%>
+      <%= f.input :address, label: "Précisez votre addresse : elle ne sera pas rendue publique" %>
+      <%= f.input :city, label: "Ville" %>
+      <%= f.input :zipcode, label: "Code Postal" %>
+      <%= f.input :equipment,label: "Quels sont les équipements que vous souhaitez mettre à disposition ?", collection: Space::EQUIPMENTTYPE, input_html: { class: 'multiselectuser', multiple: true} %>
+      <%= f.input :event_type, label: "Quels types d'événements souhaitez vous accueillir ?", collection: Space::EVENTTYPE %>
+      <%= f.input :capacity, label: "Quelle est la capacité d'accueil de votre lieu ?" %>
+      <%= f.input :policy, label: "Quelles sont vos règles d'annulation ?" %>
+      <%= f.input :photo, label: "Partagez une photo de votre lieu" %>
       <%= f.input :photo_cache, as: :hidden %>
       <%= f.submit "J'enregistre mon lieu", class: "btn btn-success" %>
     <% end %>

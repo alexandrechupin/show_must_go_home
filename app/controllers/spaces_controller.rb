@@ -15,7 +15,6 @@ before_action :set_space, only: [:show, :edit, :update, :destroy]
   end
 
   def create
-    raise
     @space = Space.new(space_params)
     @space.user = current_user
 

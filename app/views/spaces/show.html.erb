@@ -1,27 +1,21 @@
-
-
-<div class="page container">
-  <div class="space photo">
-    <%= cl_image_tag @space.photo, height: 300, width: 400, crop: :fill %>
+<div class="main_content">
+  <div class="space_photo col-md-12" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path @space.photo %>)">
   </div>
-  <div class="space details">
-  <h3><%= @space.name  %></h3>
-    <div class="space-description">
-      <div class="space-details">
-        <h4> <%= @space.address  %></h4>
-        <h4> <%= @space.equipment  %></h4>
-        <hr>
-      </div>
-    </div>
+
+  <div class ="space_actions col-md-12 d-flex mt-3">
+    <div class = "space_details col-md-5">
+      <p><%= @space.name  %></p>
+      <p> <%= @space.address  %></p>
+      <p> <%= @space.equipment  %></p>
       <p> <%= @space.description %> </p>
       <p> <%= @space.policy %></p>
       <p> <%= link_to 'Back to list', spaces_path %> </p>
-  </div>
-  <div class="space booking">
-      <h3>Book your flat!</h3>
+    </div>
+    <div class = "space_booking col-md-5">
+      <p>Book your flat!</p>
       <% unless user_signed_in? %>
-      <p>You must be logged in to book this space!</p>
-      <%= link_to "Login", new_user_session_path, class: "btn btn-dark" %>
+        <p>You must be logged in to book this space!</p>
+        <%= link_to "Login", new_user_session_path, class: "btn btn-dark" %>
       <% else %>
         <%= simple_form_for [@space, @booking] do |f| %>
           <%= f.input :event_type, label: "Type d'événement", collection: Space::EVENTTYPE %>
@@ -33,9 +27,6 @@
           <%= f.submit "Je réserve cet espace", class: "btn btn-success" %>
         <% end %>
       <% end %>
+    </div>
   </div>
 </div>
-
-
-
-

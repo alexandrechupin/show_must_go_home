@@ -26,8 +26,8 @@ puts 'Finished!'
 
 # METTRE EN COMMENTAIRE SI VOUS AVEZ DEJA CREE LES 5 FAKE ARTISTS
 
-puts 'Creating 5 fake artists...'
-5.times do
+puts 'Creating 1 fake artists...'
+1.times do
   user = User.new(
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
@@ -35,15 +35,16 @@ puts 'Creating 5 fake artists...'
     phone_number: Faker::PhoneNumber.phone_number_with_country_code,
     password: "password",
     email: Faker::Internet.email,
+    remote_photo_url: "https://res.cloudinary.com/dkvelfqyl/image/upload/v1566377203/twfychoo7jfu5p5lgkbh.jpg"
   )
   user.save!
 end
 puts 'Finished!'
 
-puts 'Creating 2 fake spaces...'
+puts 'Creating 1 fake spaces...'
   space_one = Space.new(
-    user_id: 2,
-    name: "Salon musical",
+    user_id: 87,
+    name: "Salon flute",
     address: "25 rue lecourbe",
     city: "Paris",
     zipcode: "75015",
@@ -55,23 +56,7 @@ puts 'Creating 2 fake spaces...'
     policy: "Annulation possible jusqu'à une semaine avant la date de l'événement.",
     remote_photo_url: "https://media-cdn.tripadvisor.com/media/photo-s/0c/cf/4a/dc/coin-salon-piano-au-chateau.jpg"
     )
-  user.save!
-
-  space_one = Space.new(
-    user_id: 3,
-    name: "Jardin pour concert",
-    address: "56 rue des prés",
-    city: "Neuilly",
-    zipcode: "92200",
-    equipment: "chaises pliantes",
-    event_type: "tous concerts",
-    place_type: "jardin",
-    capacity: 100,
-    description: "Grand jardin ombragés pouvant accueillir des événements de début juin à fin septembre.",
-    policy: "Annulation possible jusqu'à une semaine avant la date de l'événement.",
-    photo: "http://lamaisongueth.eu/wordpress/wp-content/uploads/2016/07/IMG_0881-960x500.jpg"
-    )
-  user.save!
+  space_one.save!
 
 puts 'Finished!'
 

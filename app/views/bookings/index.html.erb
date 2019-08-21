@@ -22,7 +22,8 @@
             <div class= "col space host"> <%= booking.space.user.first_name %> <%= booking.space.user.last_name %> </div>
             <div class="col event-description"> <%= booking.description.truncate(50, separator: /\s/) %></div>
             <div class="col date"> <%= booking.date %> </div>
-            <div class="col annulation-btn"> <button type="button" class="btn btn-danger">Annuler</button> </div>
+            <%= link_to "Annuler", booking_path(booking), method: :delete, class: 'btn btn-danger' %>
+            <!-- <div class="col annulation-btn"> <button type="button" class="btn btn-danger">Annuler</button> </div> -->
         </div>
           <% end  %>
       <% else %>

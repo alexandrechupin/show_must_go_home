@@ -1,4 +1,6 @@
 class BookingsController < ApplicationController
+  before_action :set_booking, only: [:destroy]
+
   def new
     @space = Space.find(params[:space_id])
     @booking = Booking.new
@@ -21,9 +23,18 @@ class BookingsController < ApplicationController
     @bookings = Booking.where(user_id: @user.id)
   end
 
+  def destroy
+    @booking.destroy
+    redirect_to user_bookings_path(current_user)
+  end
+
   private
 
   def booking_params
     params.require(:booking).permit(:event_type, :date, :time, :duration, :number_of_guests, :description, :space_id)
+  end
+
+  def set_booking
+    @booking = Booking.find(params[:id])
   end
 end

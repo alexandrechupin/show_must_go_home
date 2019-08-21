@@ -45,9 +45,9 @@ ActiveRecord::Schema.define(version: 2019_08_21_093323) do
     t.text "policy"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "equipment", default: [], array: true
     t.float "latitude"
     t.float "longitude"
-    t.string "equipment", default: [], array: true
     t.index ["user_id"], name: "index_spaces_on_user_id"
   end
 

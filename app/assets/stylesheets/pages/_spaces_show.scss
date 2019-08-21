@@ -1,0 +1,74 @@
+.space_actions{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.space_photo{
+height: 450px;
+background-size: cover;
+background-position: 0px -300px;
+}
+
+.space_details{
+background-color:#ededed;
+border-radius: 4px;
+height : 650px;
+}
+
+#main_title{
+margin-left: 50px;
+padding-top: 350px;
+font-size: 50px;
+color: white;
+font-style: "Raleway";
+}
+
+.details{
+padding: 10px;
+margin-top: 20px;
+background-color: white;
+border-radius: 4px;
+}
+
+.details_header{
+font-style:italic;
+}
+
+#space-header{
+padding: 10px;
+margin-top: 10px;
+font-size: 23px;
+font-weight: 100;
+border-radius: 4px;
+}
+
+#space_link{
+padding: 10px;
+margin-top: 10px;
+font-size: 15px;
+font-style: bold;
+background-color: transparent;
+border-radius: 4px;
+}
+
+.space_booking{
+background-color:#e5e3e3;
+border-radius: 4px;
+height : 650px;
+}
+
+#booking-header{
+padding: 10px;
+margin-top: 10px;
+font-size: 23px;
+font-weight: bolder;
+border-radius: 4px;
+background-position: -30px 0px;
+}
+
+.booking_details{
+font-size: 15px;
+padding: 1px;
+border-radius: 4px;
+}

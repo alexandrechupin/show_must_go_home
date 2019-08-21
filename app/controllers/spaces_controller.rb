@@ -20,7 +20,7 @@ before_action :set_space, only: [:show, :edit, :update, :destroy]
     if @space.save
       @space.user.host = true
       # appeler l'action update du controller users
-      redirect_to spaces_path
+      redirect_to space_path(@space)
     else
       render :new
     end

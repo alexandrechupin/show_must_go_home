@@ -11,7 +11,7 @@ require 'faker'
 # METTRE EN COMMENTAIRE SI VOUS AVEZ DEJA CREE LES 5 FAKE HOSTS
 
 puts 'Creating 5 fake hosts...'
-5.times do
+10.times do
   user = User.new(
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
@@ -27,7 +27,7 @@ puts 'Finished!'
 # METTRE EN COMMENTAIRE SI VOUS AVEZ DEJA CREE LES 5 FAKE ARTISTS
 
 puts 'Creating 5 fake artists...'
-5.times do
+10.times do
   user = User.new(
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,

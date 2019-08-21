@@ -1,0 +1,33 @@
+<div class="container w-80">
+
+<!--    <#% if @user.host == true %>
+ -->
+
+  <h2 id="bookings-index-title">Vos demandes de réservations</h2>
+
+  <div class="booking-list">
+    <div class="row booking-details-title d-flex justify-content-start">
+      <h3 class="col mb-3">Statut</h3>
+      <h3 class="col mb-3">Espace</h3>
+      <h3 class="col mb-3">Hôte</h3>
+      <h3 class="col mb-3">Description</h3>
+      <h3 class="col mb-3"> Date</h3>
+      <h3 class="col"></h3>
+    </div>
+      <% if @bookings %>
+        <% @bookings.each do |booking| %>
+        <div class="row booking-details d-flex mb-3">
+            <div class="col status"> <%= booking.status %></div>
+            <div class="col space-name"> <%= booking.space.name %></div>
+            <div class= "col space host"> <%= booking.space.user.first_name %> <%= booking.space.user.last_name %> </div>
+            <div class="col event-description"> <%= booking.description.truncate(50, separator: /\s/) %></div>
+            <div class="col date"> <%= booking.date %> </div>
+            <div class="col annulation-btn"> <button type="button" class="btn btn-danger">Annuler</button> </div>
+        </div>
+          <% end  %>
+      <% else %>
+         <h2 class="text-center"> <%= "You do not have any bookings" %> </h2>
+      <% end  %>
+ </div>
+
+</div>

@@ -8,17 +8,17 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.user = current_user
     @booking.space = Space.find(params[:space_id])
-    @booking.status = "Pending"
+    @booking.status = "En attente"
     if @booking.save
-      redirect_to space_path(Space.find(params[:space_id]))
+      redirect_to user_bookings_path(@booking.user)
     else
       render :new
     end
   end
 
   def index
-    @user = User.find(params[:user_id])
-    @bookings = Booking.where(id: @user.id)
+    @user = current_user
+    @bookings = Booking.where(user_id: @user.id)
   end
 
   private

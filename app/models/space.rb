@@ -15,4 +15,5 @@ class Space < ApplicationRecord
   validates :description, presence: true
   validates :photo, presence: true
   mount_uploader :photo, PhotoUploader
+  serialize :equipement
 end

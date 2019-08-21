@@ -9,47 +9,70 @@
       <div class="space_title">
       </div>
       <div class="space_precisions">
-        <div id="space-header font-weight-bold">
-          Plus de détails sur ce lieu.
+        <div id="space-header">
+          <div class="font-italic"></div>
+          À propos de ce lieu
         </div>
         <div class="details">
-            A propos de ce lieu
-          <br>
+          <div class="details_header">
+               Description
+          </div>
           <%= @space.description %>
         </div>
         <div class="details">
-          Adresse du lieu
-          <br>
+          <div class="details_header">
+               Adresse du lieu
+          </div>
           <%= @space.address  %>
         </div>
         <div class="details">
-          Equipements mis à disposition
-          <br>
-          <%= @space.equipment  %>
+          <div class="details_header">
+               Equipements mis à disposition
+          </div>
+          <% @space.equipment.each do |element| %>
+          <%= p element %>
+            <br>
+          <% end %>
         </div>
         <div class="details">
-          Politique d'annulation
-          <br>
+          <div class="details_header">
+               Politique d'annulation
+          </div>
           <%= @space.policy %>
         </div>
       </div>
-      <div class="space_link">
-        <p> <%= link_to 'Back to list', spaces_path %> </p>
+      <div id="space_link">
+        <p> <%= link_to 'Retour à la sélection', spaces_path %> </p>
       </div>
     </div>
+    <div class="column col-md-1"></div>
     <div class = "space_booking col-md-5">
-      <p>Book your flat!</p>
+      <div id="booking-header">
+        Réservez maintenant
+      </div>
       <% unless user_signed_in? %>
         <p>You must be logged in to book this space!</p>
         <%= link_to "Login", new_user_session_path, class: "btn btn-dark" %>
       <% else %>
         <%= simple_form_for [@space, @booking] do |f| %>
-          <%= f.input :event_type, label: "Type d'événement", collection: Space::EVENTTYPE %>
-          <%= f.input :date, as: :date, label: "Date" %>
-          <%= f.input :time, as: :time, label: "Heure" %>
-          <%= f.input :duration, label: "Durée en heures" %>
-          <%= f.input :description, label: "Description" %>
-          <%= f.input :number_of_guests, label: "Nombre d'invités" %>
+          <div class="booking_details">
+            <%= f.input :event_type, label: "Quel type d'événement souhaitez-vous organiser ?", collection: Space::EVENTTYPE %>
+          </div>
+          <div class="booking_details">
+            <%= f.input :description, label: "Décrivez quel est votre projet ?" %>
+          </div>
+          <div class="booking_details">
+            <%= f.input :date, as: :date, label: "Quand aura lieu l'événement ? " %>
+          </div>
+          <div class="booking_details">
+            <%= f.input :time, as: :time, label: "A partir de quelle heure souhaitez-vous disposer du lieu ?" %>
+          </div>
+          <div class="booking_details">
+            <%= f.input :duration, label: "Quelle serait la durée de l'événement ?" %>
+          </div>
+          <div class="booking_details">
+            <%= f.input :number_of_guests, label: "Quel nombre d'invités souhaitez-vous convier ?" %>
+          </div>
           <%= f.submit "Je réserve cet espace", class: "btn btn-success" %>
         <% end %>
       <% end %>

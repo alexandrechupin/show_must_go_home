@@ -40,7 +40,7 @@
 
     <div class="form-group pl-2">
       <div>
-        <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">Equipements</a>
+        <a class="btn btn-secondary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">Equipements</a>
       </div>
     </div>
   </div>
@@ -105,7 +105,7 @@
           <div class="card-trip-infos">
             <div>
               <h2><%= link_to space.name, space_path(space) %></h2>
-              <p><%= space.description %></p>
+              <p><%= space.description.truncate(60, omission: '... Voir plus') %></p>
             </div>
             <%= cl_image_tag space.user.photo.url, class:"card-trip-user avatar-bordered" %>
           </div>

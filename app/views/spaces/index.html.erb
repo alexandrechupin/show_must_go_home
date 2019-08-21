@@ -40,7 +40,7 @@
 
     <div class="form-group pl-2">
       <div>
-        <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">Equipements</a>
+        <a class="btn btn-secondary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">Equipements</a>
       </div>
     </div>
   </div>
@@ -96,24 +96,35 @@
   </div>
   <hr>
 
-  <div class="flat-cards name-flat">
-    <% @spaces.each do |space| %>
-      <div class="card-trip">
-        <%= cl_image_tag space.photo.url %>
-        <div class="card-trip-infos">
-          <div>
-            <h2><%= link_to space.name, space_path(space) %></h2>
-            <p><%= space.description %></p>
+  <div class="row">
+
+    <div class="flat-cards name-flat col-8">
+      <% @spaces.each do |space| %>
+        <div class="card-trip">
+          <%= cl_image_tag space.photo.url %>
+          <div class="card-trip-infos">
+            <div>
+              <h2><%= link_to space.name, space_path(space) %></h2>
+              <p><%= space.description.truncate(60, omission: '... Voir plus') %></p>
+            </div>
+            <%= cl_image_tag space.user.photo.url, class:"card-trip-user avatar-bordered" %>
           </div>
-          <%= cl_image_tag space.photo.url, class:"card-trip-user avatar-bordered" %>
         </div>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
+
+
+    <div
+      id="map"
+      class="col-4"
+      style="width: 100%;
+      height: 600px;"
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+    ></div>
   </div>
+
 </div>
-
-
-
 
 
 

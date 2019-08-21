@@ -2,7 +2,14 @@ class SpacesController < ApplicationController
 before_action :set_space, only: [:show, :edit, :update, :destroy]
 
   def index
-    @spaces = Space.all
+    @spaces = Space.geocoded
+
+    @markers = @spaces.map do |space|
+         {
+           lat: space.latitude,
+           lng: space.longitude
+         }
+      end
   end
 
   def show
@@ -18,7 +25,9 @@ before_action :set_space, only: [:show, :edit, :update, :destroy]
     @space = Space.new(space_params)
     @space.user = current_user
     if @space.save
-      redirect_to spaces_path
+      @space.user.host = true
+      # appeler l'action update du controller users
+      redirect_to space_path(@space)
     else
       render :new
     end
@@ -32,6 +41,6 @@ before_action :set_space, only: [:show, :edit, :update, :destroy]
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def space_params
-    params.require(:space).permit(:name, :address, :city, :zipcode, :event_type, :place_type, :capacity, :description, :photo, :policy, equipment: [])
+    params.require(:space).permit(:name, :street, :city, :zipcode, :event_type, :place_type, :capacity, :description, :photo, equipment: [])
   end
 end

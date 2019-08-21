@@ -5,7 +5,10 @@
   justify-content: space-between;
   height: 100px;
   padding: 0px 50px;
-  color: rgba(0,0,0,0.3);
+  background: rgb(220,220,220);
+  color: rgb(35, 39, 43);
+  border-top: 6px solid black;
+  margin-top: 24px;
 }
 .footer-links {
   display: flex;

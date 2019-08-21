@@ -14,6 +14,7 @@ class Space < ApplicationRecord
   validates :description, presence: true
   validates :photo, presence: true
   mount_uploader :photo, PhotoUploader
+  serialize :equipement
   geocoded_by :address
   after_validation :geocode
 

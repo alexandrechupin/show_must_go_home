@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_21_084547) do
+ActiveRecord::Schema.define(version: 2019_08_21_093323) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,7 +37,6 @@ ActiveRecord::Schema.define(version: 2019_08_21_084547) do
     t.string "street"
     t.string "city"
     t.integer "zipcode"
-    t.text "equipment"
     t.text "event_type"
     t.string "place_type"
     t.integer "capacity"
@@ -46,6 +45,7 @@ ActiveRecord::Schema.define(version: 2019_08_21_084547) do
     t.text "policy"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "equipment", default: [], array: true
     t.float "latitude"
     t.float "longitude"
     t.index ["user_id"], name: "index_spaces_on_user_id"

@@ -1,15 +1,41 @@
 <div class="main_content">
   <div class="space_photo col-md-12" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path @space.photo %>)">
+    <div id="main_title">
+      <%= @space.name %>
+    </div>
   </div>
-
   <div class ="space_actions col-md-12 d-flex mt-3">
-    <div class = "space_details col-md-5">
-      <p><%= @space.name  %></p>
-      <p> <%= @space.address  %></p>
-      <p> <%= @space.equipment  %></p>
-      <p> <%= @space.description %> </p>
-      <p> <%= @space.policy %></p>
-      <p> <%= link_to 'Back to list', spaces_path %> </p>
+    <div class ="space_details col-md-5">
+      <div class="space_title">
+      </div>
+      <div class="space_precisions">
+        <div id="space-header font-weight-bold">
+          Plus de détails sur ce lieu.
+        </div>
+        <div class="details">
+            A propos de ce lieu
+          <br>
+          <%= @space.description %>
+        </div>
+        <div class="details">
+          Adresse du lieu
+          <br>
+          <%= @space.address  %>
+        </div>
+        <div class="details">
+          Equipements mis à disposition
+          <br>
+          <%= @space.equipment  %>
+        </div>
+        <div class="details">
+          Politique d'annulation
+          <br>
+          <%= @space.policy %>
+        </div>
+      </div>
+      <div class="space_link">
+        <p> <%= link_to 'Back to list', spaces_path %> </p>
+      </div>
     </div>
     <div class = "space_booking col-md-5">
       <p>Book your flat!</p>

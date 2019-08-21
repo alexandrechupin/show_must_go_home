@@ -42,6 +42,6 @@ before_action :set_space, only: [:show, :edit, :update, :destroy]
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def space_params
-    params.require(:space).permit(:name, :host, :street, :city, :zipcode, :event_type, :place_type, :capacity, :description, :photo, equipment: [])
+    params.require(:space).permit(:name, :street, :city, :zipcode, :event_type, :place_type, :capacity, :description, :photo, equipment: [])
   end
 end

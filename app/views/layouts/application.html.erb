@@ -11,6 +11,8 @@
   </head>
   <body>
   <!-- NAVBAR -->
+
+  <div id="page-container">
     <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
 
 
@@ -72,7 +74,9 @@
     <span class="notice"><%= notice %></span>
     <span class="alert"><%= alert %></span>
 
-    <%= yield %>
+
+      <%= yield %>
+
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
 
@@ -87,6 +91,7 @@
       <div class="footer-copyright">
         Made with <i class="fas fa-heart"></i> at Le Wagon © 2019
       </div>
+    </div>
     </div>
   </body>
 </html>

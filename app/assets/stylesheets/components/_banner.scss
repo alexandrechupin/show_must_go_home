@@ -1,9 +1,15 @@
 .home-banner {
-  background-image: url('https://images.unsplash.com/photo-1546192972-3ce7aaf47eb8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1351&q=80');
-  background-size: cover;
   height: 100vh;
   color: #eee;
   text-align: center;
-  padding-top: 40vh;
   margin-top: -60px;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1546192972-3ce7aaf47eb8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1351&q=80');
+  background-size: cover;
+}
+
+.home-banner .container {
+  padding-top: 40vh;
+  h1 {
+      font-weight: 800;
+  }
 }

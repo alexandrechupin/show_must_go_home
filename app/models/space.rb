@@ -5,7 +5,6 @@ class Space < ApplicationRecord
   belongs_to :user
   has_many :bookings, dependent: :destroy
   validates :name, presence: true, uniqueness: true
-  validates :address, presence: true
   validates :city, presence: true
   validates :zipcode, presence: true
   validates :equipment, presence: true
@@ -15,4 +14,10 @@ class Space < ApplicationRecord
   validates :description, presence: true
   validates :photo, presence: true
   mount_uploader :photo, PhotoUploader
+  geocoded_by :address
+  after_validation :geocode
+
+  def address
+    [street, city].compact.join(', ')
+  end
 end

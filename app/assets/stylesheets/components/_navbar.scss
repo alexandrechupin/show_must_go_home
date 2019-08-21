@@ -1,11 +1,15 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: rgba(240,240,240,0.8);
+  z-index: 1;
+  position:relative;
 }
 
 .navbar-lewagon .logo {
   text-decoration: none;
   color: black;
+  font-size: 24px;
+  font-weight: 300;
 }
 
 .navbar-lewagon .navbar-collapse {

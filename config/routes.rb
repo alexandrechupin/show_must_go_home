@@ -1,13 +1,14 @@
 Rails.application.routes.draw do
   get 'bookings/new'
   get 'bookings/create'
+  root to: 'pages#home'
+
   devise_for :users
 
-  resources :users do
+  resources :users, only: [:show] do
     resources :bookings, only: [:index]
   end
 
-  root to: 'pages#home'
   resources :spaces, only: [:index, :create, :new, :show] do
     resources :bookings, only: [:create]
   end

@@ -21,9 +21,6 @@ class BookingsController < ApplicationController
     @bookings = Booking.where(user_id: @user.id)
   end
 
-  def destroy
-  end
-
   private
 
   def booking_params

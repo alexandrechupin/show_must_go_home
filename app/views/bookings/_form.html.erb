@@ -1,0 +1,25 @@
+<%= simple_form_for [@space, @booking] do |f| %>
+  <div class="booking_details">
+    <%= f.input :event_type, label: "Quel type d'événement souhaitez-vous organiser ?", collection: Space::EVENTTYPE %>
+  </div>
+  <div class="booking_details">
+    <%= f.input :description, label: "Décrivez quel est votre projet ?" %>
+  </div>
+  <div class="booking_details">
+    <%= f.input :date, as: :date, label: "Quand aura lieu l'événement ? " %>
+  </div>
+  <div class="booking_details">
+    <%= f.input :time, as: :time, label: "A partir de quelle heure souhaitez-vous disposer du lieu ?" %>
+  </div>
+  <div class="booking_details">
+    <%= f.input :duration, label: "Quelle serait la durée de l'événement ?" %>
+  </div>
+  <div class="booking_details">
+    <%= f.input :number_of_guests, label: "Quel nombre d'invités souhaitez-vous convier ?" %>
+  </div>
+  <% if params[:action] == "edit" %>
+    <%= f.submit "Enregistrer mes modifications", class: "btn btn-success" %>
+  <% else %>
+    <%= f.submit "Je réserve cet espace", class: "btn btn-success" %>
+  <% end %>
+<% end %>

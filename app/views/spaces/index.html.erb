@@ -1,9 +1,12 @@
-<div class="container mt-5">
-  <!-- Search form -->
-  <%= render 'search-bar' %>
-  <hr>
+<div class="index-banner">
+    <div class="index-banner-container">
+    <span><%= render 'search-bar' %></span>
+  </div>
+</div>
+
+<div class="container mt-5 pb-3">
   <div class="form-inline">
-    <input class="form-control mr-sm-2 datepicker" name="query" type="search" placeholder="Date" aria-label="Search" value="<%= params[:query] %>">
+    <input class="form-control mr-sm-2 datepicker" name="query" type="search" placeholder="Date" aria-label="Search" value="">
     <div class="form-group">
       <select class="form-control" id="exampleFormControlSelect1">
         <option>Type de lieu</option>

@@ -6,17 +6,18 @@
   <h2 id="bookings-index-title">Les événements que vous organisez</h2>
 
   <div class="booking-list">
-    <div class="row booking-details-title d-flex justify-content-start">
+    <div class="row booking-details-title justify-content-start">
       <h3 class="col mb-3">Statut</h3>
       <h3 class="col mb-3">Espace</h3>
       <h3 class="col mb-3">Hôte</h3>
       <h3 class="col mb-3">Description</h3>
       <h3 class="col mb-3"> Date</h3>
-      <h3 class="col"></h3>
+      <div class="col"></div>
+      <div class="col"></div>
     </div>
-      <% if @bookings %>
+      <% if @bookings.any? %>
         <% @bookings.each do |booking| %>
-        <div class="row booking-details d-flex mb-3">
+        <div class="row booking-details mb-3">
             <div class="col status">
               <% if booking.status == "accepted" %>
                 <p> Acceptée</p>
@@ -26,15 +27,20 @@
                 <p>En attente</p>
               <% end %>
             </div>
-            <div class="col space-name"> <p><%= booking.space.name %></p></div>
-            <div class= "col space host"> <p><%= booking.space.user.first_name %> <%= booking.space.user.last_name %> </p></div>
-            <div class="col event-description"> <p><%= booking.description.truncate(50, separator: /\s/) %></p></div>
-            <div class="col date"> <p><%= booking.date %> </p></div>
-            <%= link_to "Annuler", booking_path(booking), method: :delete, class: 'col btn btn-danger' %>
+            <div class="col space-name"> <%= booking.space.name %></div>
+            <div class= "col space host"> <%= booking.space.user.first_name %> <%= booking.space.user.last_name %> </div>
+            <div class="col event-description"> <%= booking.description.truncate(50, separator: /\s/) %></div>
+            <div class="col date"> <%= booking.date %> </div>
+            <div class="col index-buttons">
+              <%= link_to "Annuler", booking_path(booking), method: :delete, class: 'btn btn-danger' %>
+            </div>
+            <div class="col index-buttons">
+              <%= link_to "Modifier", edit_booking_path(booking), class: 'btn btn-secondary' %>
+            </div>
         </div>
           <% end  %>
       <% else %>
-         <h2 class="text-align-center"> <%= "Vous n'avez pas effectué de réservations" %> </h2>
+         <h5 class="text-align-center"> <%= "Aucune demande envoyée" %> </h5>
       <% end  %>
  </div>
 
@@ -49,7 +55,7 @@
       <h3 class="col mb-3"> Date</h3>
       <h3 class="col"></h3>
     </div>
-      <% if @space_bookings %>
+      <% if @space_bookings.any? %>
         <% @space_bookings.each do |booking| %>
         <div class="row booking-details d-flex mb-3">
             <div class="col status">
@@ -69,7 +75,7 @@
         </div>
           <% end  %>
       <% else %>
-         <h2 class="text-align-center"> <%= "Vous n'avez pas de réservations d'espaces" %> </h2>
+         <h5 class="text-align-center"> <%= "Aucune demande reçue" %> </h5>
       <% end  %>
  </div>
 

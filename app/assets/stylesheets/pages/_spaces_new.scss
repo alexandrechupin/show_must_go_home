@@ -1,0 +1,100 @@
+.main_body{
+  margin-left:auto;
+  margin-right:auto;
+  padding-left: 0px;
+  padding-right: 0px;
+  border-radius: 4px
+
+}
+
+abbr{
+display:none;
+}
+
+.nav-tabs{
+  border:none;
+  a {
+  color: #d3cfcf;
+}
+
+}
+.nav-link:hover{
+  border:none;
+   a {
+  color: red !important;
+}
+}
+
+.nav-link.active{
+  border:none;
+  border-bottom: 3px solid grey !important;
+}
+.nav_container{
+  width:100%;
+  }
+
+.tab-content{
+  width:600px;
+  margin: 0 auto;
+  padding-bottom: 100px;
+}
+
+#title_header{
+  width: 100%;
+  margin-top : 20px;
+  margin-bottom: 40px;
+  h2{
+  margin-left: 15px;
+  }
+}
+
+#nav-home{
+  margin-top : 50px;
+}
+
+#nav-profile{
+  margin-top : 50px;
+}
+
+#nav-contact{
+  margin-top : 50px;
+}
+
+#nav-final{
+  margin-top : 50px;
+}
+
+
+.tab-buttons{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 44px;
+}
+
+.favorite{
+  width: 179px;
+  height: 38px;
+  border:none;
+  border-radius: 4px;
+  font-weight: bolder;
+}
+
+#photolabel{
+  margin-bottom: 20px !important;
+}
+
+.form-check{
+  display: inline-block;
+  width: 50%;
+  padding-left: 106px;
+}
+
+.col-form-label{
+  padding-bottom: 15px;
+}
+
+.submit_space{
+  font-weight: 600;
+  border-radius: 4px;
+}

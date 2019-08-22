@@ -33,6 +33,14 @@ before_action :set_space, only: [:show, :edit, :update, :destroy]
     end
   end
 
+  def edit
+  end
+
+  def update
+    @space.update(space_params)
+    redirect_to space_path(@space)
+  end
+
   def destroy
     @space.destroy
     redirect_to spaces_path

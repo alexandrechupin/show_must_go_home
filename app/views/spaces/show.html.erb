@@ -14,6 +14,10 @@
         <div class="space_precisions">
           <div class="space-header">
             <h3>À propos de ce lieu</h3>
+            <ul class="list-inline">
+            <li class="list-inline-item"><i class="fas fa-map-marker-alt"></i> <%= @space.city + ", " + @space.zipcode.to_s  %></li>
+            <li class="list-inline-item"><i class="fas fa-users"></i> <%= @space.capacity %></li>
+            </ul>
           </div>
 
           <div class="details">
@@ -22,8 +26,8 @@
           </div>
 
           <div class="details">
-            <h4>Localisation</h4>
-            <p><%= @space.city + ", " + @space.zipcode.to_s  %></p>
+            <h4>Type d'événements acceptés</h4>
+            <p><%= @space.event_type %></p>
           </div>
 
           <div class="details">
@@ -105,8 +109,8 @@
           <div class="space-booking col-md-5">
 
               <h3>Ceci est un de vos espaces.</h3>
-
-            <%= link_to 'Modifier cette annonce', '#', class: "btn btn-secondary" %>
+            <br>
+            <%= link_to 'Modifier cette annonce', edit_space_path(@space), class: "btn btn-secondary" %>
             <br>
             <br>
             <%= link_to 'Retirer cette annonce', space_path(@space), method: :delete, data: { confirm: "Êtes-vous certains de vouloir supprimer cet espace ?" } , class: "btn btn-danger" %>

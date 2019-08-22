@@ -1,1 +1,64 @@
-show.html.erb
+<div class="container col-6 mb-5">
+  <h3>Détails de la réservation</h3>
+
+  <hr>
+
+  <div class="booking-information">
+    <div class="event-organiser d-flex justify-content-between">
+      <div>
+        <p> L'organisateur : <strong> <%= @booking.user.first_name %> <%= @booking.user.last_name %> </strong> </p>
+        <p> <%= @booking.user.description %></p>
+      </div>
+        <%= cl_image_tag @booking.user.photo.url, class:"card-trip-user avatar-medium" %>
+    </div>
+
+  <hr>
+
+    <div class="event-description">
+      <div class="event-date-time">
+        <h4>Date et durée de l'événement</h4>
+        <p> Date : <%= @booking.date.strftime("%d %B, %Y") %></p>
+        <p> Heure de début : <%= @booking.time.strftime("%H:%M") %></p>
+        <p> Durée : <%= @booking.duration %> heures</p>
+      </div>
+      <div id="event-type">
+        <h4>Type d'évenement</h4>
+        <p> <%= @booking.event_type.capitalize %></p>
+      </div>
+      <div id="description">
+        <h4>Description</h4>
+        <p> <%= @booking.description %></p>
+        <p><%= @booking.number_of_guests %> invités</p>
+      </div>
+      <div id="booking-info">
+        <h4>Statut de la demande</h4>
+        <% if @booking.status == "accepted" %>
+          <p>Acceptée</p>
+        <% elsif @booking.status == "refused"  %>
+          <p> Refusée</p>
+        <% else %>
+          <p>En attente</p>
+        <% end %>
+        <p> Demande envoyée le <%= @booking.created_at.strftime("%d %B, %Y") %></p>
+      </div>
+    </div>
+
+    <div class="booking-buttons">
+      <div class="booking-action-btn d-flex justify-content-center">
+        <div class="action-btn accept">
+          <%= simple_form_for @booking do |f|%>
+          <%= f.input :status, :input_html => { :value => "accepted" }, as: :hidden %>
+          <%= f.submit "Accepter", class: 'btn btn-secondary' %>
+        <% end %>
+        </div>
+        <div class="action-btn refuse">
+          <%= simple_form_for @booking do |f|%>
+          <%= f.input :status, :input_html => { :value => "refused" }, as: :hidden %>
+          <%= f.submit "Refuser", class: 'btn btn-danger' %>
+          <% end %>
+        </div>
+      </div>
+      <%= link_to "Back to list", user_bookings_path(current_user), class: ' btn-secondary' %>
+    </div>
+  </div>
+</div>

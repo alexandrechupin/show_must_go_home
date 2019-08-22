@@ -1,0 +1,20 @@
+<div class="container mt-3 col-6">
+    <h2> Modifiez votre espace </h2>
+
+    <%= simple_form_for(@space) do |f| %>
+      <%= f.input :name, label: "Nom du lieu" %>
+      <%= f.input :place_type, label: "Type", collection: Space::SPACETYPE %>
+      <%= f.input :description, label: "Description brève"%>
+      <%= f.input :street, label: "Adresse" %>
+      <%= f.input :city, label: "Ville" %>
+      <%= f.input :zipcode, label: "Code Postal" %>
+      <%= f.input :equipment, label: "Equipements", collection: Space::EQUIPMENTTYPE, as: :check_boxes, include_hidden: false%>
+      <%= f.input :event_type, label: "Types d'événements", collection: Space::EVENTTYPE %>
+      <%= f.input :capacity, label: "Capacité" %>
+      <%= f.input :policy, label: "Règles d'annulation" %>
+      <%= f.input :photo, label: "Photo du lieu" %>
+      <%= f.input :photo_cache, as: :hidden %>
+      <%= f.submit "Je sauvegarde mes modifications", class: "btn btn-success mb-3" %>
+    <% end %>
+    <br>
+</div>

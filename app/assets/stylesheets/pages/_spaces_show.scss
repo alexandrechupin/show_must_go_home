@@ -1,8 +1,3 @@
-.space_actions{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 
 .space_image{
 height: 450px;
@@ -10,11 +5,6 @@ background-size: cover;
 background-position: 0px -300px;
 }
 
-.space_details{
-background-color:#ededed;
-border-radius: 4px;
-height : 650px;
-}
 
 #main_title{
 margin-left: 50px;
@@ -24,26 +14,23 @@ color: white;
 font-style: "Raleway";
 }
 
-.details{
+.details {
 padding: 10px;
 margin-top: 20px;
-background-color: white;
-border-radius: 4px;
+  h4 {
+    font-weight:400;
+    font-size:18px;
+  }
+  p {
+    font-weight: 100;
+  }
 }
 
-.details_header{
-font-style:italic;
+.space-header li {
+  font-weight: 100;
 }
 
-#space-header{
-padding: 10px;
-margin-top: 10px;
-font-size: 23px;
-font-weight: 100;
-border-radius: 4px;
-}
-
-#space_link{
+#space_link {
 padding: 10px;
 margin-top: 10px;
 font-size: 15px;
@@ -52,23 +39,64 @@ background-color: transparent;
 border-radius: 4px;
 }
 
-.space_booking{
-background-color:#e5e3e3;
-border-radius: 4px;
-height : 650px;
+.space-booking {
+  border-radius: 2px;
+  background-color: rgb(253, 253, 253);
+  height : 100%;
+  border: 1px solid rgb(233, 232, 234);
+  font-weight: 100;
+  padding: 16px;
+  h3 {
+    font-weight: 500;
+    font-size: 24px;
+  }
 }
 
-#booking-header{
+
+.space-user {
 padding: 10px;
-margin-top: 10px;
-font-size: 23px;
-font-weight: bolder;
-border-radius: 4px;
-background-position: -30px 0px;
+}
+
+.column-third {
+  width: 33%;
+  padding: 4px;
+}
+
+.column-two-thirds {
+  width: 67%;
+  padding: 4px;
+}
+
+.user-details {
+  padding-left: 20px;
+  p {
+    font-weight: 100;
+  }
+  h4 {
+    font-weight: 400;
+  }
+}
+
+.details .list-inline-item {
+  border-radius: 4px;
+  border: 1px solid grey;
+  padding: 8px;
+  font-weight: 100;
+  margin-bottom: 8px;
+}
+
+.booking-header{
+  padding: 10px;
+  margin-top: 10px;
+  font-size: 23px;
+  font-weight: bolder;
+  border-radius: 4px;
+  background-position: -30px 0px;
 }
 
 .booking_details{
-font-size: 15px;
-padding: 1px;
-border-radius: 4px;
+  font-size: 15px;
+  padding: 1px;
+  border-radius: 4px;
 }
+

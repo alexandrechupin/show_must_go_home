@@ -55,7 +55,7 @@
                <%= cl_image_tag @space.user.photo.url, class:"avatar-large" %>
             </div>
             <div class="user-details column-two-thirds">
-              <h4> <%= @space.user.first_name + " " + @space.user.last_name %> </h4>
+              <h4> <%= @space.user.first_name %> <%= @space.user.last_name %> </h4>
               <p><%= @space.user.description %></p>
             </div>
           </div>

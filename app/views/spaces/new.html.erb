@@ -3,72 +3,70 @@
 </div>
 
 <div class="main_body col-md-10">
-<nav class="nav_container">
-  <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
-    <a class="step nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Description</a>
-    <a class="step nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Équipements</a>
-    <a class="step nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Localisation</a>
-    <a class="step nav-item nav-link" id="nav-final-tab" data-toggle="tab" href="#nav-final" role="tab" aria-controls="nav-final" aria-selected="false">Finalisation</a>
-  </div>
-</nav>
-<div class="tab-content" id="nav-tabContent">
-  <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-    <%if user_signed_in? %>
-    <%= simple_form_for(@space) do |f| %>
-      <%= f.input :name, label: "Nommez votre lieu" %>
-      <%= f.input :place_type, label: "Sélectionnez le type de lieu que vous souhaitez partager", collection: Space::SPACETYPE %>
-      <%= f.input :description, label: "Décrivez brièvement votre lieu"%>
-      <div class="tab-buttons">
-        <input class="favorite styled next-btn"
-         type="button"
-         value="Suivant">
+  <%if user_signed_in? %>
+  <%= simple_form_for(@space) do |f| %>
+  <nav class="nav_container">
+    <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+      <a class="step nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Description</a>
+      <a class="step nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Équipements</a>
+      <a class="step nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Localisation</a>
+      <a class="step nav-item nav-link" id="nav-final-tab" data-toggle="tab" href="#nav-final" role="tab" aria-controls="nav-final" aria-selected="false">Finalisation</a>
+    </div>
+  </nav>
+  <div class="tab-content" id="nav-tabContent">
+    <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+        <%= f.input :name, label: "Nommez votre lieu" %>
+        <%= f.input :place_type, label: "Sélectionnez le type de lieu que vous souhaitez partager", collection: Space::SPACETYPE %>
+        <%= f.input :description, label: "Décrivez brièvement votre lieu"%>
+        <div class="tab-buttons">
+          <input class="favorite styled next-btn"
+           type="button"
+           value="Suivant">
+          </div>
         </div>
-      </div>
-  <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-    <%= f.input :equipment, label: "Quels sont les équipements que vous souhaitez mettre à disposition ?", collection: Space::EQUIPMENTTYPE, as: :check_boxes, include_hidden: false%>
-    <%= f.input :event_type, label: "Quels types d'événements souhaitez vous accueillir ?", collection: Space::EVENTTYPE %>
-    <%= f.input :capacity, label: "Quelle est la capacité d'accueil de votre lieu ?" %>
-     <div class="tab-buttons">
-       <input class="favorite styled"
-        type="button"
-        value="Précédent">
-      <input class="favorite styled next-btn"
-        type="button"
-        value="Suivant">
-      </div>
-  </div>
-  <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
-    <%= f.input :street, label: "Précisez votre addresse : elle ne sera pas rendue publique" %>
-    <%= f.input :city, label: "Ville" %>
-    <%= f.input :zipcode, label: "Code Postal" %>
-     <div class="tab-buttons">
-      <input class="favorite styled"
-        type="button"
-        value="Précédent">
-      <input class="favorite styled next-btn"
-        type="button"
-        value="Suivant">
-      </div>
-  </div>
-   <div class="tab-pane fade" id="nav-final" role="tabpanel" aria-labelledby="nav-final-tab">
-      <%= f.input :policy, label: "Quelles sont vos règles d'annulation ?" %>
-      <div id="photolabel">
-      <%= f.input :photo, label: "Partagez une photo de votre lieu" %>
-      </div>
-      <div>
-        <%= f.input :photo_cache, as: :hidden %>
-      </div>
+    <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+      <%= f.input :equipment, label: "Quels sont les équipements que vous souhaitez mettre à disposition ?", collection: Space::EQUIPMENTTYPE, as: :check_boxes, include_hidden: false%>
+      <%= f.input :event_type, label: "Quels types d'événements souhaitez vous accueillir ?", collection: Space::EVENTTYPE %>
+      <%= f.input :capacity, label: "Quelle est la capacité d'accueil de votre lieu ?" %>
        <div class="tab-buttons">
-        <input class="favorite styled"
-        type="button"
-        value="Précédent">
-        <div>
-          <%= f.submit "J'enregistre mon lieu", class: "btn btn-success mb-3 submit_space" %>
+         <input class="prv-btn favorite styled"
+          type="button"
+          value="Précédent">
+        <input class="favorite styled next-btn"
+          type="button"
+          value="Suivant">
         </div>
-      </div>
+    </div>
+    <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+      <%= f.input :street, label: "Précisez votre addresse : elle ne sera pas rendue publique" %>
+      <%= f.input :city, label: "Ville" %>
+      <%= f.input :zipcode, label: "Code Postal" %>
+       <div class="tab-buttons">
+        <input class="prv-btn favorite styled"
+          type="button"
+          value="Précédent">
+        <input class="favorite styled next-btn"
+          type="button"
+          value="Suivant">
+        </div>
+    </div>
+     <div class="tab-pane fade" id="nav-final" role="tabpanel" aria-labelledby="nav-final-tab">
+        <%= f.input :policy, label: "Quelles sont vos règles d'annulation ?" %>
+        <div id="photolabel">
+        <%= f.input :photo, label: "Partagez une photo de votre lieu" %>
+        </div>
+        <div>
+          <%= f.input :photo_cache, as: :hidden %>
+        </div>
+           <div class="tab-buttons">
+            <input class="prv-btn favorite styled"
+            type="button"
+            value="Précédent">
+            <%= f.submit "J'enregistre mon lieu", class: "btn btn-success mb-3 submit_space" %>
+           </div>
+        </div>
     <% end %>
-   </div>
-</div>
+  </div>
 
   </div>
   <% else %>

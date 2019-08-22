@@ -16,8 +16,12 @@
                   autofocus: false,
                   label: "Nom",
                   input_html: { autocomplete: "last_name" } %>
+      <%= f.input :description,
+                  required: false,
+                  autofocus: false,
+                  label: "Présentez-vous en quelques mots." %>
       <%= f.input :phone_number,
-                  required: true,
+                  required: false,
                   autofocus: false,
                   label: "Numéro de téléphone",
                   input_html: { autocomplete: "phone_number" } %>

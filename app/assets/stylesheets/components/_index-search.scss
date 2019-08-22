@@ -1,0 +1,24 @@
+.index-banner {
+  height: 50vh;
+  color: black;
+  display: flex;
+  justify-content: center;
+  margin-top: -60px;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('living_room.jpg');
+  background-size: cover;
+}
+
+.index-banner-container {
+  padding-top: 28vh;
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 20px;
+  h1 {
+      font-weight: 800;
+  }
+}
+
+.search-field {
+  width: 800px;
+}
+

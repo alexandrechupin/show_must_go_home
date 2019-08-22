@@ -3,7 +3,7 @@
 <!--    <#% if @user.host == true %>
  -->
 
-  <h2 id="bookings-index-title">Vos événements </h2>
+  <h2 id="bookings-index-title">Les événements que vous organisez</h2>
 
   <div class="booking-list">
     <div class="row booking-details-title justify-content-start">
@@ -44,7 +44,7 @@
       <% end  %>
  </div>
 
- <h2 id="bookings-index-title">Vos demandes de réservations</h2>
+ <h2 id="bookings-index-title">Ces artistes souhaitent venir chez vous</h2>
 
   <div class="booking-list">
     <div class="row booking-details-title d-flex justify-content-start">
@@ -67,10 +67,10 @@
                 <p>En attente</p>
               <% end %>
             </div>
-            <div class="col space-name"> <%= booking.space.name %></div>
-            <div class= "col space host"> <%= booking.user.first_name %> <%= booking.user.last_name %> </div>
-            <div class="col event-description"> <%= booking.description.truncate(50, separator: /\s/) %></div>
-            <div class="col date"> <%= booking.date %> </div>
+            <div class="col space-name"> <p><%= booking.space.name %></p></div>
+            <div class= "col space host"> <p><%= booking.user.first_name %> <%= booking.user.last_name %></p> </div>
+            <div class="col event-description"> <p><%= booking.description.truncate(50, separator: /\s/) %></p></div>
+            <div class="col date"> <p><%= booking.date %></p> </div>
             <%= link_to "Details", booking_path(booking), class: 'col btn btn-secondary' %>
         </div>
           <% end  %>

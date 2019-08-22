@@ -13,7 +13,7 @@ Rails.application.routes.draw do
     resources :bookings, only: [:create]
   end
 
-  resources :bookings, only: [:destroy]
+  resources :bookings, only: [:show, :destroy, :edit, :update]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   get "spaces", to: "spaces#index"
 end

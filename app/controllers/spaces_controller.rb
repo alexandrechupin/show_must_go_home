@@ -7,9 +7,16 @@ before_action :set_space, only: [:show, :edit, :update, :destroy]
     @markers = @spaces.map do |space|
          {
            lat: space.latitude,
-           lng: space.longitude
+           lng: space.longitude,
+           infoWindow: render_to_string(partial: "info_window", locals: { space: space })
          }
       end
+
+    if params[:query].present?
+      @spaces = Space.global_search(params[:query])
+    else
+      @spaces = Space.all
+    end
   end
 
   def show

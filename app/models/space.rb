@@ -21,4 +21,15 @@ class Space < ApplicationRecord
   def address
     [street, city].compact.join(', ')
   end
+
+  include PgSearch::Model
+  pg_search_scope :global_search, against: {
+    city: 'A',
+    zipcode: 'B',
+    place_type: 'C'
+  },
+    against: [ :name, :city, :zipcode, :event_type, :place_type, :street ],
+    using: {
+      tsearch: { prefix: true }
+    }
 end

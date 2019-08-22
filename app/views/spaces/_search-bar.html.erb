@@ -6,10 +6,11 @@
 
 <form>
   <span class = "row"><%= form_tag spaces_path, method: :get do %>
-    <span class = "col"><%= text_field_tag :query,
-      params[:query],
+    <span class = "col"><%= text_field_tag :address,
+      params[:address],
       class: "col form-control search-field",
-      placeholder: "Votre recherche"
+      placeholder: "Votre recherche",
+      id: "space_address"
     %></span>
     <span class = "col"><%= submit_tag "Rechercher", class: "btn btn-primary" %></span>
   <% end %></span>

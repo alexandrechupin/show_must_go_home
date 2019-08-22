@@ -94,7 +94,13 @@ display:none;
   padding-bottom: 15px;
 }
 
-.submit_space{
+#submit_space {
   font-weight: 600;
   border-radius: 4px;
+}
+
+.final-butns{
+  .tab-buttons{
+    width:100px;
+  }
 }

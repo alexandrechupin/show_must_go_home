@@ -3,6 +3,14 @@
 }
 
 .mapboxgl-popup-content {
-  text-align: center;
+  text-align: left;
   font-family: 'Open Sans', sans-serif;
+  h2 {
+    font-size: 18px;
+  }
+}
+
+#map {
+  position: sticky;
+  top: 0;
 }

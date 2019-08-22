@@ -20,12 +20,21 @@ const formValidation = () => {
       nextStep.click();
     // } else if (checkForm(formInputs)) {
     //   previousStep.click();
-    } else {
+    } else if (event.target.classList.contains('prv-btn')) {
       // displayErrors();
       previousStep.click();
     }
   }));
 }
+
+const form = document.querySelector(".new_space")
+const button = document.getElementById("submit_space")
+if (button) {
+  button.addEventListener("click", (event) => {
+     form.submit();
+  });}
+
+
 
 const checkForm = (formInputs) => {
   console.log(formInputs);

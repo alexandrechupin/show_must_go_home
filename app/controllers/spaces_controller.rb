@@ -61,6 +61,19 @@ before_action :set_space, only: [:show, :edit, :update, :destroy]
     end
   end
 
+  def edit
+  end
+
+  def update
+    @space.update(space_params)
+    redirect_to space_path(@space)
+  end
+
+  def destroy
+    @space.destroy
+    redirect_to spaces_path
+  end
+
   private
 
   def set_space
@@ -69,6 +82,6 @@ before_action :set_space, only: [:show, :edit, :update, :destroy]
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def space_params
-    params.require(:space).permit(:name, :street, :city, :zipcode, :event_type, :place_type, :capacity, :description, :photo, equipment: [])
+    params.require(:space).permit(:name, :street, :city, :zipcode, :event_type, :place_type, :capacity, :description, :policy, :photo, equipment: [])
   end
 end

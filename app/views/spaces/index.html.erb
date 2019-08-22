@@ -5,99 +5,102 @@
 </div>
 
 <div class="container mt-5 pb-3">
-  <div class="form-inline">
-    <input class="form-control mr-sm-2 datepicker" name="query" type="search" placeholder="Date" aria-label="Search" value="">
-    <div class="form-group">
-      <select class="form-control" id="exampleFormControlSelect1">
-        <option>Type de lieu</option>
-        <option>salon</option>
-        <option>loft</option>
-        <option>jardin</option>
-        <option>terrasse</option>
-        <option>grange</option>
-        <option>bureau</option>
-      </select>
-    </div><br>
+  <span class="filters-area">
+    <%= form_tag spaces_path, method: :get do %>
+      <%= hidden_field_tag :address, params[:address] %>
+      <div class="form-inline">
+        <input class="form-control mr-sm-2 datepicker" name="date" type="search" placeholder="Date" aria-label="Search" value="">
+        <div class="form-group">
+          <select class="form-control" name="lieu" id="exampleFormControlSelect1">
+            <option value="">Type de lieu</option>
+            <option value="salon">salon</option>
+            <option value="loft">loft</option>
+            <option value="jardin">jardin</option>
+            <option value="terrasse">terrasse</option>
+            <option value="grange">grange</option>
+            <option value="bureau">bureau</option>
+          </select>
+        </div><br>
 
-    <div class="form-group pl-2">
-      <select class="form-control" id="exampleFormControlSelect1">
-        <option>Nombre de personnes</option>
-        <option>0-15 personnes</option>
-        <option>15-30 personnes</option>
-        <option>30+</option>
-      </select>
-    </div>
+        <div class="form-group pl-2">
+          <select class="form-control" name="event" id="exampleFormControlSelect1">
+            <option value="">Type d'évènement</option>
+            <option value="tous concerts">tous concerts</option>
+            <option value="événements classique">événements classique</option>
+            <option value="événements folk">événements folk</option>
+            <option value="événements jazz">événements jazz</option>
+            <option value="événements pop/rock">événements pop/rock</option>
+            <option value="lectures">lectures</option>
+            <option value="événements festifs">événements festifs</option>
+          </select>
+        </div>
 
-    <div class="form-group pl-2">
-      <select class="form-control" id="exampleFormControlSelect1">
-        <option>Type d'évènement</option>
-        <option>tous concerts</option>
-        <option>événements classique</option>
-        <option>événements folk</option>
-        <option>événements jazz</option>
-        <option>événements pop/rock</option>
-        <option>lectures</option>
-        <option>événements festifs</option>
-      </select>
-    </div>
+        <div class="form-group pl-2">
+          <input class="form-control" name="capacité" type="number" id="replyNumber" min="0" data-bind="value:replyNumber" placeholder="Nombre d'invités"/>
+        </div>
 
-    <div class="form-group pl-2">
-      <div>
-        <a class="btn btn-secondary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">Equipements</a>
+        <div class="form-group pl-2">
+          <div>
+            <a class="btn btn-secondary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">Equipements</a>
+          </div>
+        </div>
+        <%= submit_tag "Rechercher", class: "btn btn-primary ml-5" %>
       </div>
-    </div>
-  </div>
-  <div class="collapse mt-3" id="collapseExample">
-    <div class="form-check form-check-inline">
-      <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-      <label class="form-check-label" for="inlineCheckbox1">piano droit</label>
-    </div>
-    <div class="form-check form-check-inline">
-      <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-      <label class="form-check-label" for="inlineCheckbox2">piano à queue</label>
-    </div>
-    <div class="form-check form-check-inline">
-      <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-      <label class="form-check-label" for="inlineCheckbox2">ascenseur</label>
-    </div>
-    <div class="form-check form-check-inline">
-      <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-      <label class="form-check-label" for="inlineCheckbox2">arrivée électrique</label>
-    </div>
-    <div class="form-check form-check-inline">
-      <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-      <label class="form-check-label" for="inlineCheckbox2">chaises pliantes</label>
-    </div>
-    <div class="form-check form-check-inline">
-      <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-      <label class="form-check-label" for="inlineCheckbox2">chaises fixes</label>
-    </div>
-    <div class="form-check form-check-inline">
-      <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-      <label class="form-check-label" for="inlineCheckbox2">coussins</label>
-    </div>
-    <div class="form-check form-check-inline">
-      <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-      <label class="form-check-label" for="inlineCheckbox2">tables</label>
-    </div>
-    <div class="form-check form-check-inline">
-      <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-      <label class="form-check-label" for="inlineCheckbox2">verres</label>
-    </div>
-    <div class="form-check form-check-inline">
-      <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-      <label class="form-check-label" for="inlineCheckbox2">cafetière</label>
-    </div>
-    <div class="form-check form-check-inline">
-      <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-      <label class="form-check-label" for="inlineCheckbox2">bouilloire</label>
-    </div>
-    <div class="form-check form-check-inline">
-      <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-      <label class="form-check-label" for="inlineCheckbox2">réfrigérateur</label>
-    </div>
-  </div>
-  <hr>
+
+      <div class="collapse mt-3" id="collapseExample">
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" name="equipement" type="checkbox" id="inlineCheckbox1" value="piano droit">
+          <label class="form-check-label" for="inlineCheckbox1">piano droit</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" name="equipement" type="checkbox" id="inlineCheckbox2" value="piano à queue">
+          <label class="form-check-label" for="inlineCheckbox2">piano à queue</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" name="equipement" type="checkbox" id="inlineCheckbox3" value="ascenseur">
+          <label class="form-check-label" for="inlineCheckbox3">ascenseur</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" name="equipement" type="checkbox" id="inlineCheckbox4" value="arrivée électrique">
+          <label class="form-check-label" for="inlineCheckbox4">arrivée électrique</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" name="equipement" type="checkbox" id="inlineCheckbox5" value="chaises pliantes">
+          <label class="form-check-label" for="inlineCheckbox6">chaises pliantes</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" name="equipement"
+          type="checkbox" id="inlineCheckbox7" value="chaises fixes">
+          <label class="form-check-label" for="inlineCheckbox7">chaises fixes</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" name="equipement" type="checkbox" id="inlineCheckbox8" value="coussins">
+          <label class="form-check-label" for="inlineCheckbox9">coussins</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" name="equipement" type="checkbox" id="inlineCheckbox10" value="tables">
+          <label class="form-check-label" for="inlineCheckbox10">tables</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" name="equipement" type="checkbox" id="inlineCheckbox11" value="verres">
+          <label class="form-check-label" for="inlineCheckbox11">verres</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" name="equipement" type="checkbox" id="inlineCheckbox12" value="cafetière">
+          <label class="form-check-label" for="inlineCheckbox12">cafetière</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" name="equipement" type="checkbox" id="inlineCheckbox13" value="bouilloire">
+          <label class="form-check-label" for="inlineCheckbox13">bouilloire</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" name="equipement" type="checkbox" id="inlineCheckbox14" value="réfrigérateur">
+          <label class="form-check-label" for="inlineCheckbox15">réfrigérateur</label>
+        </div>
+      </div>
+      <% end %>
+    <hr>
+  </span>
 
   <div class="row">
 

@@ -27,12 +27,12 @@ const formValidation = () => {
   }));
 }
 
-const form = document.getElementById("new_string")
-const button = document.querySelector(".submit_space")
-
-button.addEventListener((e) =>{
-  form.submit();
-});
+const form = document.querySelector(".new_space")
+const button = document.getElementById("submit_space")
+if (button) {
+  button.addEventListener("click", (event) => {
+     form.submit();
+  });}
 
 
 

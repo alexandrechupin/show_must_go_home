@@ -4,9 +4,12 @@
   <hr>
 
   <div class="booking-information">
-    <div class="event-organiser d-flex">
-      <p> <%= @booking.user.first_name %> <%= @booking.user.last_name %> </p>
-      <%= cl_image_tag @booking.user.photo.url, class:"card-trip-user avatar-bordered ml-auto" %>
+    <div class="event-organiser d-flex justify-content-between">
+      <div>
+        <p> L'organisateur : <strong> <%= @booking.user.first_name %> <%= @booking.user.last_name %> </strong> </p>
+        <p> <%= @booking.user.description %></p>
+      </div>
+        <%= cl_image_tag @booking.user.photo.url, class:"card-trip-user avatar-medium" %>
     </div>
 
   <hr>
@@ -45,17 +48,17 @@
         <div class="action-btn accept">
           <%= simple_form_for @booking do |f|%>
           <%= f.input :status, :input_html => { :value => "accepted" }, as: :hidden %>
-          <%= f.submit "Accepter" %>
+          <%= f.submit "Accepter", class: 'btn btn-secondary' %>
         <% end %>
         </div>
         <div class="action-btn refuse">
           <%= simple_form_for @booking do |f|%>
           <%= f.input :status, :input_html => { :value => "refused" }, as: :hidden %>
-          <%= f.submit "Refuser" %>
+          <%= f.submit "Refuser", class: 'btn btn-danger' %>
           <% end %>
         </div>
       </div>
-      <%= link_to "Back to list", user_bookings_path(current_user), class: 'btn-outline-secondary' %>
+      <%= link_to "Back to list", user_bookings_path(current_user), class: ' btn-secondary' %>
     </div>
   </div>
 </div>

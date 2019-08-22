@@ -1,5 +1,5 @@
 .booking-details {
-  background-color: white;
+  background-color: rgb(253, 253, 253);
   border-radius: 4px;
   padding: 10px;
   display: flex;
@@ -13,9 +13,17 @@
 
 .booking-list {
   margin-bottom: 50px;
+  h3 {
+    font-weight: 300;
+    font-size: 16px;
+  }
+  p {
+    font-weight: 100;
+  }
 }
  #bookings-index-title {
-  font-weight: bolder;
   margin-top: 40px;
   margin-bottom: 40px;
+  font-weight: 500;
+  font-size: 24px;
  }

@@ -6,7 +6,7 @@
     <%= f.input :description, label: "Décrivez quel est votre projet ?" %>
   </div>
   <div class="booking_details">
-    <%= f.input :date, as: :date, label: "Quand aura lieu l'événement ? " %>
+    <%= f.input :date, as: :string, input_html: {class: "datepicker bg-white"},  label: "Quand aura lieu l'événement ?"%>
   </div>
   <div class="booking_details">
     <%= f.input :time, as: :time, label: "A partir de quelle heure souhaitez-vous disposer du lieu ?" %>

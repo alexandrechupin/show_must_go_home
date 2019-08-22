@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :set_booking, only: [:destroy, :update, :edit]
+  before_action :set_booking, only: [:destroy, :update, :edit, :show]
 
   def new
     @space = Space.find(params[:space_id])
@@ -14,7 +14,8 @@ class BookingsController < ApplicationController
     if @booking.save
       redirect_to user_bookings_path(@booking.user)
     else
-      render :new
+      @space = Space.find(params[:space_id])
+      render "spaces/show"
     end
   end
 
@@ -30,7 +31,6 @@ class BookingsController < ApplicationController
   end
 
   def show
-    @booking = Booking.find(params[:id])
   end
 
   def edit

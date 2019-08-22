@@ -12,8 +12,14 @@ before_action :set_space, only: [:show, :edit, :update, :destroy]
          }
       end
 
-    if params[:query].present?
-      @spaces = Space.global_search(params[:query])
+    # if params[:query].present?
+    #   @spaces = Space.global_search(params[:query])
+    # else
+    #   @spaces = Space.all
+    # end
+
+    if params[:address].present?
+      @spaces = Space.near(params[:address], 1)
     else
       @spaces = Space.all
     end

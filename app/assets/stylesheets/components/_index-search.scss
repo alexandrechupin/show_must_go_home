@@ -1,7 +1,8 @@
 .index-banner {
   height: 50vh;
-  color: #eee;
-  text-align: center;
+  color: black;
+  display: flex;
+  justify-content: center;
   margin-top: -60px;
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('living_room.jpg');
   background-size: cover;
@@ -20,3 +21,4 @@
 .search-field {
   width: 800px;
 }
+

@@ -1,2 +1,4 @@
+<img class='w-100 pb-2' src='<%= space.photo %>' alt="">
 <h2><%= link_to space.name, space_path(space) %></h2>
+<p class="mb-0"><%= space.street %></p>
 <p><%= space.city + ", " + space.zipcode.to_s %></p>

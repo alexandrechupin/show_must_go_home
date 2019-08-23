@@ -26,17 +26,16 @@
         </div>
     <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
         <div class="form-group">
-  <label class="control-label check_boxes optional">Quels sont les équipements que vous souhaitez mettre à disposition ?</label>
-  <input type="hidden" name="space[equipment][]" value="">
-  <div class="equipment-choices">
-    <% Space::EQUIPMENTTYPE.each do |equipment| %>
-      <input type="hidden" class="hidden" value="<%= equipment %>" name="space[equipment][]" id="space_equipment<%= equipment %>">
-      <label for="space_equipment<%= equipment %>" class="eqmt-card">
-        <%= equipment %>
-      </label>
-    <% end %>
-   </div>
-</div>
+          <label class="control-label check_boxes optional">Quels sont les équipements que vous souhaitez mettre à disposition ?</label>
+          <div class="equipment-choices">
+            <% Space::EQUIPMENTTYPE.each do |equipment| %>
+              <input type="checkbox" class="hidden" value="<%= equipment %>" name="space[equipment][]" id="space_equipment<%= equipment %>">
+              <label for="space_equipment<%= equipment %>" class="eqmt-card">
+                <%= equipment %>
+              </label>
+            <% end %>
+           </div>
+        </div>
       <%= f.input :event_type, label: "Quels types d'événements souhaitez vous accueillir ?", collection: Space::EVENTTYPE %>
       <%= f.input :capacity, label: "Quelle est la capacité d'accueil de votre lieu ?" %>
        <div class="tab-buttons">

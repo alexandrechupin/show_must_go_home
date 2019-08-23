@@ -48,7 +48,7 @@
         </div>
     </div>
     <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
-      <%= f.input :street, label: "Précisez votre addresse : elle ne sera pas rendue publique" %>
+      <%= f.input :street, label: "Précisez votre addresse : elle ne sera pas rendue publique", input_html: {id: "space_address"} %>
       <%= f.input :city, label: "Ville" %>
       <%= f.input :zipcode, label: "Code Postal" %>
        <div class="tab-buttons">

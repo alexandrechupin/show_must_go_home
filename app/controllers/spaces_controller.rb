@@ -52,7 +52,9 @@ before_action :set_space, only: [:show, :edit, :update, :destroy]
 
   def create
     @space = Space.new(space_params)
+    # @space.equipment.delete_at(0)
     @space.user = current_user
+
     if @space.save
       current_user.host = true
       current_user.save

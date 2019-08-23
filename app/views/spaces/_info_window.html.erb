@@ -1,2 +1,2 @@
-<h2><%= space.name %></h2>
-<p><%= space.address %></p>
+<h2><%= link_to space.name, space_path(space) %></h2>
+<p><%= space.city + ", " + space.zipcode.to_s %></p>

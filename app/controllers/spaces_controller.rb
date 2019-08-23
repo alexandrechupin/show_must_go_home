@@ -19,7 +19,7 @@ before_action :set_space, only: [:show, :edit, :update, :destroy]
     end
 
     if params[:address].present?
-      @spaces = Space.near(params[:address], 1)
+      @spaces = Space.near(params[:address], 6)
     else
       @spaces = Space.all
     end

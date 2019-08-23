@@ -27,7 +27,8 @@
                   <p>En attente</p>
                 <% end %>
               </div>
-              <div class="col space-name">  <p> <%= booking.space.name %> </p></div>
+              <div class="col space-name">  <p> <%= link_to space_path(booking.space) do %>
+                <%= booking.space.name %> <% end %></p> </div>
               <div class= "col space host"> <p> <%= booking.space.user.first_name %> <%= booking.space.user.last_name %> </p> </div>
               <div class="col event-description">  <p> <%= booking.description.truncate(50, separator: /\s/) %> </p></div>
               <div class="col date">  <p> <%= booking.date.strftime("%d-%m-%Y") %> </p> </div>

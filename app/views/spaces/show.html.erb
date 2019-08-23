@@ -100,24 +100,25 @@
 
       </div>
 
-      <div class="reviews">
-        <div class="reviews-list">
+      <div class="space-reviews">
+        <h3>Les avis sur l'espace de <%= @space.user.first_name %></h3>
+        <div class="reviews-list d-flex">
           <% if @space.reviews.any? %>
-            <div class="space-reviews">
               <ul>
                 <% @space.reviews.each do |review| %>
-                <li> <%= review.content %> <%= review.stars %> </li>
+                <div class="review-content"> <%= review.user.photo  %> <%= review.content %> <%= review.stars %> </div>
                 <% end %>
               </ul>
-            </div>
           <% else %>
              Soyez le premier à donner votre avis sur l'espace de  <%= @space.user.first_name %>
           <% end %>
         </div>
 
         <div class="add-reviews">
-          <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#reviewModal" data-whatever="@mdo">Donner mon avis </button>
-          <div class="modal fade" id="reviewModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="add-review-btn">
+            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#reviewModal" data-whatever="@mdo">Donner mon avis </button>
+          </div>
+            <div class="modal fade" id="reviewModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
               <div class="modal-content">
                 <div class="modal-header">

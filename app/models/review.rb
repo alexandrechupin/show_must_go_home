@@ -1,5 +1,6 @@
 class Review < ApplicationRecord
   belongs_to :space
+  belongs_to :user
 
   def new
     @space = Review.find(params[:space_id])

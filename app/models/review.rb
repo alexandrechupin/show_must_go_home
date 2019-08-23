@@ -11,6 +11,7 @@ class Review < ApplicationRecord
     @review = Review.new(review_params)
     @space = Space.find(params[:space_id])
     @review.space = @space
+    @user = current_user
     @review.save
     redirect_to space_path(@space)
   end

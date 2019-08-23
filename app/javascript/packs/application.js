@@ -13,7 +13,9 @@ import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
 import { initMapbox } from '../plugins/init_mapbox';
 import formValidation from '../plugins/form_validation';
 import { initAutocomplete } from '../plugins/init_autocomplete';
+import { initEquipmentchoices } from "../plugins/equipement_choices";
 
 initMapbox();
 initAutocomplete();
 formValidation();
+initEquipmentchoices();

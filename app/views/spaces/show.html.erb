@@ -101,22 +101,34 @@
       </div>
 
       <div class="space-reviews">
-        <h3>Les avis sur l'espace de <%= @space.user.first_name %></h3>
-        <div class="reviews-list d-flex">
+         <% unless  @space.user == current_user %>
+          <h3>Les avis sur l'espace de <%= @space.user.first_name %></h3>
+            <% else %>
+          <h3>Les avis sur votre espace</h3>
+         <% end %>
+
+        <div class="reviews-list">
           <% if @space.reviews.any? %>
               <ul>
                 <% @space.reviews.each do |review| %>
-                <div class="review-content"> <%= review.user.photo  %> <%= review.content %> <%= review.stars %> </div>
+                <div class="review-content"> <%= review.content %> <%= review.stars %> </div>
                 <% end %>
               </ul>
           <% else %>
-             Soyez le premier à donner votre avis sur l'espace de  <%= @space.user.first_name %>
+            <% unless  @space.user == current_user %>
+              Soyez le premier à donner votre avis
+            <% else %>
+              Aucun avis n'a été publié
+         <% end %>
+
           <% end %>
         </div>
 
+        <% unless @space.user == current_user %>
+
         <div class="add-reviews">
           <div class="add-review-btn">
-            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#reviewModal" data-whatever="@mdo">Donner mon avis </button>
+            <button type="button" class="btn btn-success mt-2" data-toggle="modal" data-target="#reviewModal" data-whatever="@mdo">Donner mon avis </button>
           </div>
             <div class="modal fade" id="reviewModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
@@ -141,7 +153,8 @@
             </div>
           </div>
         </div>
-      </div>
+      <% end %>
+    </div>
 
      </div>
   </div>

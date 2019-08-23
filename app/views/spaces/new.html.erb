@@ -30,10 +30,9 @@
   <input type="hidden" name="space[equipment][]" value="">
   <div class="equipment-choices">
     <% Space::EQUIPMENTTYPE.each do |equipment| %>
-      <input type="checkbox" class="hidden" value="<%= equipment %>" name="space[equipment][]" id="space_equipment<%= equipment %>">
-      <label for="space_equipment<%= equipment %>">
+      <input type="hidden" class="hidden" value="<%= equipment %>" name="space[equipment][]" id="space_equipment<%= equipment %>">
+      <label for="space_equipment<%= equipment %>" class="eqmt-card">
         <%= equipment %>
-        <i class="fa fa-check"></i>
       </label>
     <% end %>
    </div>

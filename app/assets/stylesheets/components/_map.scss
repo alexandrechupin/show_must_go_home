@@ -8,9 +8,17 @@
   h2 {
     font-size: 18px;
   }
+  a {
+    text-decoration: none;
+    color: black;
+  }
+  a:hover {
+    font-weight: 500;
+  }
 }
 
 #map {
   position: sticky;
   top: 0;
 }
+

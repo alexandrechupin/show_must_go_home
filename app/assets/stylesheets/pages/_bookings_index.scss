@@ -28,3 +28,12 @@
   font-size: 24px;
  }
 
+.space-name {
+  text-decoration: none;
+  a {
+    color: black;
+  }
+  a:hover {
+    font-weight: 300;
+  }
+}

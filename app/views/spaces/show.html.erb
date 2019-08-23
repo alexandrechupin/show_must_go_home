@@ -111,8 +111,14 @@
           <% if @space.reviews.any? %>
               <ul>
                 <% @space.reviews.each do |review| %>
-                <div class="review-content"> <%= review.content %> <%= review.stars %> </div>
-                <% end %>
+                <div class="review-content">
+                  <p><%= cl_image_tag review.user.photo.url, class:"card-trip-user avatar-bordered" %>
+                  <strong class="pl-2"><%= review.user.first_name %></strong> : " <em><%= review.content %> </em> "
+                  <span class="pl-2"><% review.stars.times do%>
+                    ⭐
+                  <% end %></span>
+                  </div>
+                <% end %></p>
               </ul>
           <% else %>
             <% unless  @space.user == current_user %>
@@ -126,7 +132,7 @@
 
         <% unless @space.user == current_user %>
 
-        <div class="add-reviews">
+        <div class="add-reviews mb-2">
           <div class="add-review-btn">
             <button type="button" class="btn btn-success mt-2" data-toggle="modal" data-target="#reviewModal" data-whatever="@mdo">Donner mon avis </button>
           </div>

@@ -83,7 +83,6 @@
           <% end %>
         </div>
 
-
         <% else %>
 
           <div class="space-booking col-md-5">
@@ -99,7 +98,50 @@
 
       <% end %>
 
+      </div>
 
-    </div>
+      <div class="reviews">
+        <div class="reviews-list">
+          <% if @space.reviews.any? %>
+            <div class="space-reviews">
+              <ul>
+                <% @space.reviews.each do |review| %>
+                <li> <%= review.content %> <%= review.stars %> </li>
+                <% end %>
+              </ul>
+            </div>
+          <% else %>
+             Soyez le premier à donner votre avis sur l'espace de  <%= @space.user.first_name %>
+          <% end %>
+        </div>
+
+        <div class="add-reviews">
+          <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#reviewModal" data-whatever="@mdo">Donner mon avis </button>
+          <div class="modal fade" id="reviewModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Mon avis sur l'espace de <%= @space.user.first_name  %> </h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <%= simple_form_for [@space, @review] do |f| %>
+                  <%= f.input :content, label: "Votre avis" %>
+                  <%= f.input :stars, label: "Votre note sur 5" %>
+                  <%= f.submit "Envoyer", id: "submit_review", class: "btn btn-success mb-3" %>
+                  <% end %>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+     </div>
   </div>
 </div>

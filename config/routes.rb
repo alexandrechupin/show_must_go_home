@@ -11,6 +11,7 @@ Rails.application.routes.draw do
 
   resources :spaces do
     resources :bookings, only: [:create]
+    resources :reviews, only: [:new, :create]
   end
 
   resources :bookings, only: [:show, :destroy, :edit, :update]

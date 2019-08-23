@@ -4,6 +4,7 @@ class Space < ApplicationRecord
   EQUIPMENTTYPE = ["piano droit", "piano à queue", "ascenseur", "arrivée électrique", "chaises pliantes", "chaises fixes", "coussins", "table", "verres", "cafetière", "bouilloire", "réfrigérateur"]
   belongs_to :user
   has_many :bookings, dependent: :destroy
+  has_many :reviews, dependent: :destroy
   validates :name, presence: true, uniqueness: true
   validates :city, presence: true
   validates :zipcode, presence: true

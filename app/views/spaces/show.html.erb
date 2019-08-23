@@ -128,8 +128,8 @@
                 </div>
                 <div class="modal-body">
                   <%= simple_form_for [@space, @review] do |f| %>
-                  <%= f.input :content, label: "Votre avis" %>
-                  <%= f.input :stars, label: "Votre note sur 5" %>
+                  <%= f.input :content, label: "Commentaire" %>
+                  <%= f.input :stars, label: "Note sur 5" %>
                   <%= f.submit "Envoyer", id: "submit_review", class: "btn btn-success mb-3" %>
                   <% end %>
                 </div>

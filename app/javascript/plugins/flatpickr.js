@@ -6,3 +6,7 @@ flatpickr(".datepicker", {
   format: "d-m-Y",
   altFormat: "d-m-Y",
   altInput: true})
+
+flatpickr("#datepicker", {
+  locale: French
+});
